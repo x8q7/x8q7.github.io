@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>JavaScript位操作</title>
+    <url>/2020/04/09/JavaScript%E4%BD%8D%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h2 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h2><h3 id="1-按位非"><a href="#1-按位非" class="headerlink" title="1.按位非(~)"></a>1.按位非(~)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位取反。(数值的反码) eg. ~25 &#x3D;&gt; -26</span><br></pre></td></tr></table></figure>
+<h3 id="2-按位与-amp"><a href="#2-按位与-amp" class="headerlink" title="2.按位与(&amp;)"></a>2.按位与(&amp;)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位取与。</span><br><span class="line"></span><br><span class="line">1 &amp; 1 &#x3D;&gt; 1</span><br><span class="line">1 &amp; 0 &#x3D;&gt; 0</span><br><span class="line">0 &amp; 1 &#x3D;&gt; 0</span><br><span class="line">0 &amp; 0 &#x3D;&gt; 0</span><br></pre></td></tr></table></figure>
+<h3 id="3-按位或"><a href="#3-按位或" class="headerlink" title="3.按位或(|)"></a>3.按位或(|)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位或。</span><br><span class="line"></span><br><span class="line">1 &amp; 1 &#x3D;&gt; 1</span><br><span class="line">1 &amp; 0 &#x3D;&gt; 1</span><br><span class="line">0 &amp; 1 &#x3D;&gt; 1</span><br><span class="line">0 &amp; 0 &#x3D;&gt; 0</span><br></pre></td></tr></table></figure>
+<h3 id="4-按位异或"><a href="#4-按位异或" class="headerlink" title="4.按位异或(^)"></a>4.按位异或(^)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位异或。</span><br><span class="line"></span><br><span class="line">1 &amp; 1 &#x3D;&gt; 0</span><br><span class="line">1 &amp; 0 &#x3D;&gt; 1</span><br><span class="line">0 &amp; 1 &#x3D;&gt; 1</span><br><span class="line">0 &amp; 0 &#x3D;&gt; 0</span><br></pre></td></tr></table></figure>
+<h3 id="5-左移-lt-lt"><a href="#5-左移-lt-lt" class="headerlink" title="5.左移(&lt;&lt;)"></a>5.左移(&lt;&lt;)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位向左移动指定位数。(右侧多出的空位补 0 )</span><br><span class="line"></span><br><span class="line">var oldValue &#x3D; 2;   &#x2F;&#x2F;等于二进制的10</span><br><span class="line">var newValue &#x3D; oldValue &lt;&lt; 5;   &#x2F;&#x2F;等于二进制的1000000，十进制的 64</span><br><span class="line"></span><br><span class="line">注：左移不会影响操作数的符号位。(eg. -2向左移动5位，结果将是 -64，不是 64。)</span><br></pre></td></tr></table></figure>
+<h3 id="6-有符号的右移-gt-gt"><a href="#6-有符号的右移-gt-gt" class="headerlink" title="6.有符号的右移(&gt;&gt;)"></a>6.有符号的右移(&gt;&gt;)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位向右移动指定位数，保留符号位，且 使用符号位 填充左侧空缺位。</span><br><span class="line"></span><br><span class="line">var oldValue &#x3D; 64;  &#x2F;&#x2F;等于二进制的1000000</span><br><span class="line">var newValue &#x3D; oldValue &gt;&gt; 5; &#x2F;&#x2F;等于二进制的10，即 十进制的 2</span><br></pre></td></tr></table></figure>
+<h3 id="7-无符号右移-gt-gt-gt"><a href="#7-无符号右移-gt-gt-gt" class="headerlink" title="7.无符号右移(&gt;&gt;&gt;)"></a>7.无符号右移(&gt;&gt;&gt;)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位向右移动指定位数(所有位，符号位也右移)，不保留符号位，使用 0 填充左侧空缺位。</span><br><span class="line"></span><br><span class="line">eg.</span><br><span class="line">正数右移 与 上 无分别；</span><br><span class="line">负数右移 求 正数的补码，在整体 右移。</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>javascript</tag>
+        <tag>位</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python切割plist文件</title>
+    <url>/2020/04/09/Python%E5%88%87%E5%89%B2plist%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>切割方法源码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!python  </span><br><span class="line">import os,sys  </span><br><span class="line">from xml.etree import ElementTree  </span><br><span class="line">from PIL import Image  </span><br><span class="line">  </span><br><span class="line">def tree_to_dict(tree):  </span><br><span class="line">    d &#x3D; &#123;&#125;  </span><br><span class="line">    for index, item in enumerate(tree):  </span><br><span class="line">        if item.tag &#x3D;&#x3D; &#39;key&#39;:  </span><br><span class="line">            if tree[index+1].tag &#x3D;&#x3D; &#39;string&#39;:  </span><br><span class="line">                d[item.text] &#x3D; tree[index + 1].text  </span><br><span class="line">            elif tree[index + 1].tag &#x3D;&#x3D; &#39;true&#39;:  </span><br><span class="line">                d[item.text] &#x3D; True  </span><br><span class="line">            elif tree[index + 1].tag &#x3D;&#x3D; &#39;false&#39;:  </span><br><span class="line">                d[item.text] &#x3D; False  </span><br><span class="line">            elif tree[index+1].tag &#x3D;&#x3D; &#39;dict&#39;:  </span><br><span class="line">                d[item.text] &#x3D; tree_to_dict(tree[index+1])  </span><br><span class="line">    return d  </span><br><span class="line">  </span><br><span class="line">def gen_png_from_plist(plist_filename, png_filename):  </span><br><span class="line">    file_path &#x3D; plist_filename.replace(&#39;.plist&#39;, &#39;&#39;)  </span><br><span class="line">    big_image &#x3D; Image.open(png_filename)  </span><br><span class="line">    root &#x3D; ElementTree.fromstring(open(plist_filename, &#39;r&#39;).read())  </span><br><span class="line">    plist_dict &#x3D; tree_to_dict(root[0])  </span><br><span class="line">    to_list &#x3D; lambda x: x.replace(&#39;&#123;&#39;,&#39;&#39;).replace(&#39;&#125;&#39;,&#39;&#39;).split(&#39;,&#39;)  </span><br><span class="line">    for k,v in plist_dict[&#39;frames&#39;].items():  </span><br><span class="line">        rectlist &#x3D; to_list(v[&#39;frame&#39;])  </span><br><span class="line">        width &#x3D; int( rectlist[3] if v[&#39;rotated&#39;] else rectlist[2] )  </span><br><span class="line">        height &#x3D; int( rectlist[2] if v[&#39;rotated&#39;] else rectlist[3] )  </span><br><span class="line">        box&#x3D;(   </span><br><span class="line">            int(rectlist[0]),  </span><br><span class="line">            int(rectlist[1]),  </span><br><span class="line">            int(rectlist[0]) + width,  </span><br><span class="line">            int(rectlist[1]) + height,  </span><br><span class="line">            )  </span><br><span class="line">        sizelist &#x3D; [ int(x) for x in to_list(v[&#39;sourceSize&#39;])]  </span><br><span class="line">        rect_on_big &#x3D; big_image.crop(box)  </span><br><span class="line">  </span><br><span class="line">        if v[&#39;rotated&#39;]:  </span><br><span class="line">            rect_on_big &#x3D; rect_on_big.rotate(90)  </span><br><span class="line">  </span><br><span class="line">        result_image &#x3D; Image.new(&#39;RGBA&#39;, sizelist, (0,0,0,0))  </span><br><span class="line">        if v[&#39;rotated&#39;]:  </span><br><span class="line">            result_box&#x3D;(  </span><br><span class="line">                ( sizelist[0] - height )&#x2F;2,  </span><br><span class="line">                ( sizelist[1] - width )&#x2F;2,  </span><br><span class="line">                ( sizelist[0] + height )&#x2F;2,  </span><br><span class="line">                ( sizelist[1] + width )&#x2F;2  </span><br><span class="line">                )  </span><br><span class="line">        else:  </span><br><span class="line">            result_box&#x3D;(  </span><br><span class="line">                ( sizelist[0] - width )&#x2F;2,  </span><br><span class="line">                ( sizelist[1] - height )&#x2F;2,  </span><br><span class="line">                ( sizelist[0] + width )&#x2F;2,  </span><br><span class="line">                ( sizelist[1] + height )&#x2F;2  </span><br><span class="line">                )  </span><br><span class="line">        result_image.paste(rect_on_big, result_box, mask&#x3D;0)  </span><br><span class="line">  </span><br><span class="line">        if not os.path.isdir(file_path):  </span><br><span class="line">            os.mkdir(file_path)  </span><br><span class="line">        outfile &#x3D; (file_path+&#39;&#x2F;&#39; + k).replace(&#39;gift_&#39;, &#39;&#39;)  </span><br><span class="line">        print outfile, &quot;generated&quot;  </span><br><span class="line">        result_image.save(outfile)  </span><br><span class="line">  </span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:  </span><br><span class="line">    filename &#x3D; sys.argv[1]  </span><br><span class="line">    plist_filename &#x3D; filename + &#39;.plist&#39;  </span><br><span class="line">    png_filename &#x3D; filename + &#39;.png&#39;  </span><br><span class="line">    if (os.path.exists(plist_filename) and os.path.exists(png_filename)):  </span><br><span class="line">        gen_png_from_plist( plist_filename, png_filename )  </span><br><span class="line">    else:  </span><br><span class="line">        print &quot;make sure you have boith plist and png files in the same directory&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>python</tag>
+        <tag>plist文件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>About Me</title>
+    <url>/2020/04/08/about/</url>
+    <content><![CDATA[<blockquote>
+<p>A Coder, live in Beijing, China.</p>
+</blockquote>
+<p>姓名：王若宇<br>现居：Beijing<br>QQ: 924971430<br>Email: <a href="mailto:lushichuanshuo183@163.com">lushichuanshuo183@163.com</a></p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos环境安装node</title>
+    <url>/2020/04/09/centos%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85node/</url>
+    <content><![CDATA[<h2 id="centos环境安装node"><a href="#centos环境安装node" class="headerlink" title="centos环境安装node"></a>centos环境安装node</h2><p><img src="https://hbimg.huabanimg.com/b2c4f8a02983dedb12a00f8e9b05012c3ad0c0ba1c398-zPw5Nm_fw658" alt="花瓣网"></p>
+<blockquote>
+<p>人和自己相处越久，越明白如何疗愈自我，情绪平复的速度快到无法控制，渐渐觉得连伤口都可贵。但偶尔还是会厌恶我自己，为什么爱在悲伤的时刻讲笑话。</p>
+</blockquote>
+<h3 id="安装wget"><a href="#安装wget" class="headerlink" title="安装wget"></a>安装wget</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.yum install -y wget</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-下载node"><a href="#2-下载node" class="headerlink" title="2.下载node"></a>2.下载node</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;nodejs.org&#x2F;download&#x2F;release&#x2F;v10.15.3&#x2F;node-v10.15.3-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="3-解压tar文件"><a href="#3-解压tar文件" class="headerlink" title="3.解压tar文件"></a>3.解压tar文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar zxvf node-v10.15.3-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="4-配置环境变量"><a href="#4-配置环境变量" class="headerlink" title="4.配置环境变量"></a>4.配置环境变量</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd node-v10.15.3-linux-x64</span><br><span class="line">pwd</span><br><span class="line">vi &#x2F;etc&#x2F;profile</span><br><span class="line">GG</span><br><span class="line">export NODE_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;src&#x2F;node-v10.15.3-linux-x64</span><br><span class="line">export PATH&#x3D;$NODE_HOME&#x2F;bin:$PATH</span><br></pre></td></tr></table></figure>
+<h3 id="5-配置生效"><a href="#5-配置生效" class="headerlink" title="5.配置生效"></a>5.配置生效</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">source &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure>
+<h3 id="6-完成"><a href="#6-完成" class="headerlink" title="6.完成"></a>6.完成</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>centos</tag>
+        <tag>nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos网络配置</title>
+    <url>/2020/04/09/centos%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="虚拟机安装centos配置网络"><a href="#虚拟机安装centos配置网络" class="headerlink" title="虚拟机安装centos配置网络"></a>虚拟机安装centos配置网络</h2><p><img src="https://hbimg.huabanimg.com/4116e135d96f6f729bfd44b56a814fd9e85005483cb57-KiGDbm_fw658" alt="来自花瓣"></p>
+<blockquote>
+<p>曾经拥有的东西被夺走，并不代表就会回到原来没有那种东西的时候。</p>
+</blockquote>
+<h3 id="1-安装centos"><a href="#1-安装centos" class="headerlink" title="1.安装centos"></a>1.安装centos</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">添加虚拟机</span><br></pre></td></tr></table></figure>
+<h3 id="2-修改-配置ifcfg-ens33-文件"><a href="#2-修改-配置ifcfg-ens33-文件" class="headerlink" title="2.修改 配置ifcfg-ens33 文件"></a>2.修改 配置ifcfg-ens33 文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">NM_CONTROLLED&#x3D;no #表示该接口将通过该配置文件进行设置，而不是通过网络管理器进行管理</span><br><span class="line">ONBOOT&#x3D;yes #开机启动</span><br><span class="line">BOOTPROTO&#x3D;static #静态IP</span><br><span class="line">IPADDR&#x3D;192.168.59.134 #本机地址</span><br><span class="line">NETMASK&#x3D;255.255.255.0 #子网掩码</span><br><span class="line">GATEWAY&#x3D;192.168.59.2 #默认网关</span><br><span class="line">DNS1&#x3D;8.8.8.8</span><br><span class="line">DNS2&#x3D;8.8.4.4</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="3-设置桥接模式"><a href="#3-设置桥接模式" class="headerlink" title="3.设置桥接模式"></a>3.设置桥接模式</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.关闭虚拟机</span><br><span class="line">2.设置桥接模式</span><br></pre></td></tr></table></figure>
+
+<p>参考文献：<br><a href="https://blog.csdn.net/zhangchao_cn/article/details/85246558" target="_blank" rel="noopener">https://blog.csdn.net/zhangchao_cn/article/details/85246558</a></p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>centos</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker常用指令</title>
+    <url>/2020/04/09/docker%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h3 id="查看运行中的docker"><a href="#查看运行中的docker" class="headerlink" title="查看运行中的docker"></a>查看运行中的docker</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker ps [OPTIONS]</span><br><span class="line">    -a :显示所有的容器，包括未运行的。</span><br><span class="line">    </span><br><span class="line">    -f :根据条件过滤显示的内容。</span><br><span class="line">    </span><br><span class="line">    --format :指定返回值的模板文件。</span><br><span class="line">    </span><br><span class="line">    -l :显示最近创建的容器。</span><br><span class="line">    </span><br><span class="line">    -n :列出最近创建的n个容器。</span><br><span class="line">    </span><br><span class="line">    --no-trunc :不截断输出。</span><br><span class="line">    </span><br><span class="line">    -q :静默模式，只显示容器编号。</span><br><span class="line">    </span><br><span class="line">    -s :显示总的文件大小。</span><br></pre></td></tr></table></figure>
+
+<h3 id="进入docker"><a href="#进入docker" class="headerlink" title="进入docker"></a>进入docker</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker exec -it 4f0f3c9400cc bash</span><br><span class="line">    -d :分离模式: 在后台运行</span><br><span class="line">    </span><br><span class="line">    -i :即使没有附加也保持STDIN 打开</span><br><span class="line">    </span><br><span class="line">    -t :分配一个伪终端</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.runoob.com/docker/docker-command-manual.html" target="_blank" rel="noopener">docker 常用指令</a></p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>docker</tag>
+        <tag>指令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>fiddler安卓抓包</title>
+    <url>/2020/04/09/fiddler%E5%AE%89%E5%8D%93%E6%8A%93%E5%8C%85/</url>
+    <content><![CDATA[<h2 id="fiddler对安卓APP抓包"><a href="#fiddler对安卓APP抓包" class="headerlink" title="fiddler对安卓APP抓包"></a>fiddler对安卓APP抓包</h2><p><img src="http://hbimg.huabanimg.com/0deb5da511be824e89d90c2f91301d91e9cdbe212d5db-uP39rc_fw658" alt="来自花瓣"></p>
+<blockquote>
+<p>心太软的人快乐是不容易的，别人伤害她或她伤害别人都让她在心里病一场。</p>
+</blockquote>
+<h3 id="1-导出证书"><a href="#1-导出证书" class="headerlink" title="1.导出证书"></a>1.导出证书</h3><h3 id="2-手机安装证书"><a href="#2-手机安装证书" class="headerlink" title="2.手机安装证书"></a>2.手机安装证书</h3><h3 id="3-勾选配置项"><a href="#3-勾选配置项" class="headerlink" title="3.勾选配置项"></a>3.勾选配置项</h3><pre><code>1.HTTPS 解密
+
+2.忽略服务器证书错误
+
+3.允许远程计算机链接</code></pre><h3 id="4-设置手机finddler-代理（电脑IP-amp-finddler-port）"><a href="#4-设置手机finddler-代理（电脑IP-amp-finddler-port）" class="headerlink" title="4.设置手机finddler 代理（电脑IP &amp; finddler port）"></a>4.设置手机finddler 代理（电脑IP &amp; finddler port）</h3><h3 id="5-检查手机电脑链接同一网络"><a href="#5-检查手机电脑链接同一网络" class="headerlink" title="5.检查手机电脑链接同一网络"></a>5.检查手机电脑链接同一网络</h3><h3 id="6-开心调试"><a href="#6-开心调试" class="headerlink" title="6.开心调试"></a>6.开心调试</h3><p>感谢原文：<a href="https://www.cnblogs.com/king8/p/9016007.html" target="_blank" rel="noopener">https://www.cnblogs.com/king8/p/9016007.html</a></p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>Android</tag>
+        <tag>抓包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git删除分支</title>
+    <url>/2020/04/09/git%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -a</span><br><span class="line">git push origin --delete ruoyu &#x2F;&#x2F;删除 远程分支</span><br><span class="line">git branch -d ruoyu &#x2F;&#x2F;删除 本地分支</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/04/08/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>nodejs图片验证码</title>
+    <url>/2020/04/09/nodejs%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/</url>
+    <content><![CDATA[<h2 id="nodejs-图片验证码（get接口直接显示图片）"><a href="#nodejs-图片验证码（get接口直接显示图片）" class="headerlink" title="nodejs 图片验证码（get接口直接显示图片）"></a>nodejs 图片验证码（get接口直接显示图片）</h2><p><img src="//hbimg.huabanimg.com/302809fd96b650c61996bf4c4234d4d209d89beca0c9d-eNfhCC_fw658" alt="来自花瓣"></p>
+<blockquote>
+<p>努力工作，用心创造美好生活。</p>
+</blockquote>
+<h3 id="1-需求："><a href="#1-需求：" class="headerlink" title="1.需求："></a>1.需求：</h3><h4 id="1-图片验证码，用于限制短信或登录请求次数；"><a href="#1-图片验证码，用于限制短信或登录请求次数；" class="headerlink" title="1.图片验证码，用于限制短信或登录请求次数；"></a>1.图片验证码，用于限制短信或登录请求次数；</h4><h4 id="2-使用get-请求接口，将接口地址直接赋值给-标签的-src-属性，图片可直接显示；"><a href="#2-使用get-请求接口，将接口地址直接赋值给-标签的-src-属性，图片可直接显示；" class="headerlink" title="2.使用get 请求接口，将接口地址直接赋值给  标签的 src 属性，图片可直接显示；"></a>2.使用get 请求接口，将接口地址直接赋值给 <img> 标签的 src 属性，图片可直接显示；</h4><h3 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2.代码实现"></a>2.代码实现</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">app.get(&quot;&#x2F;string&quot;, async (req,res,next)&#x3D;&gt;&#123;</span><br><span class="line">    res.set(&#39;Content-Type&#39;, &#39;image&#x2F;jpeg&#39;);</span><br><span class="line">    &#x2F;&#x2F; res.attachment(&#39;&#x2F;public&#x2F;images&#x2F;node.jpg&#39;);&#x2F;&#x2F;错误方式，触发下载</span><br><span class="line">    let _url &#x3D; path.join(global.filedir, &#39;&#x2F;public&#x2F;images&#x2F;node.jpg&#39;);</span><br><span class="line">    let _img &#x3D; fs.readFileSync(_url);&#x2F;&#x2F;正确方式，返回流文件</span><br><span class="line">    res.send(_img);</span><br><span class="line">    res.status(200).end();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="3-注意："><a href="#3-注意：" class="headerlink" title="3.注意："></a>3.注意：</h3><h4 id="1-src-直接显示，说明返回值，浏览器可直接解析为图片，所以，传输内容为-base64，或者流文件；"><a href="#1-src-直接显示，说明返回值，浏览器可直接解析为图片，所以，传输内容为-base64，或者流文件；" class="headerlink" title="1.src 直接显示，说明返回值，浏览器可直接解析为图片，所以，传输内容为 base64，或者流文件；"></a>1.src 直接显示，说明返回值，浏览器可直接解析为图片，所以，传输内容为 base64，或者流文件；</h4><h4 id="2-需要设置http-返回格式，’image-jpeg’；"><a href="#2-需要设置http-返回格式，’image-jpeg’；" class="headerlink" title="2.需要设置http 返回格式，’image/jpeg’；"></a>2.需要设置http 返回格式，’image/jpeg’；</h4><h4 id="3-返回图片错误思路，设置附件格式，-会触发浏览器下载-；"><a href="#3-返回图片错误思路，设置附件格式，-会触发浏览器下载-；" class="headerlink" title="3.返回图片错误思路，设置附件格式，==会触发浏览器下载==；"></a>3.返回图片错误思路，设置附件格式，==会触发浏览器下载==；</h4>]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>nodejs</tag>
+        <tag>图片验证码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>release x8q7 blog</title>
+    <url>/2020/04/08/hi/</url>
+    <content><![CDATA[<h2 id="I’m-glad-to-tell-the-world-hello-world"><a href="#I’m-glad-to-tell-the-world-hello-world" class="headerlink" title="I’m glad to tell the world, hello world."></a>I’m glad to tell the world, hello world.</h2><blockquote>
+<p>愿世间的美好，从这里开始。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【Nginx笔记】反向代理，资源压缩</title>
+    <url>/2020/04/08/%E3%80%90Nginx%E7%AC%94%E8%AE%B0%E3%80%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%8C%E8%B5%84%E6%BA%90%E5%8E%8B%E7%BC%A9/</url>
+    <content><![CDATA[<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><h3 id="1-资源压缩"><a href="#1-资源压缩" class="headerlink" title="1.资源压缩"></a>1.资源压缩</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 开启gzip 压缩</span><br><span class="line">gzip on;</span><br><span class="line"># 设置gzip所需的http协议最低版本 （HTTP&#x2F;1.1, HTTP&#x2F;1.0）</span><br><span class="line">gzip_http_version 1.1;</span><br><span class="line"># 设置压缩级别，压缩级别越高压缩时间越长  （1-9）</span><br><span class="line">gzip_comp_level 4;</span><br><span class="line"># 设置压缩的最小字节数， 页面Content-Length获取</span><br><span class="line">gzip_min_length 1000;</span><br><span class="line"># 设置压缩文件的类型  （text&#x2F;html)</span><br><span class="line">gzip_types text&#x2F;plain application&#x2F;javascript text&#x2F;css;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-反向代理（分流）"><a href="#2-反向代理（分流）" class="headerlink" title="2.反向代理（分流）"></a>2.反向代理（分流）</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 1.定义上游服务器列表组</span><br><span class="line">upstream web1 &#123;</span><br><span class="line">    server 127.0.0.1:9090 weight&#x3D;1;</span><br><span class="line">    server 127.0.0.1:9091 weight&#x3D;1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2.定义服务 用于转发</span><br><span class="line">server&#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    # using web1 sub domain to access</span><br><span class="line">    server_name 127.0.0.1;&#x2F;&#x2F;服务监听地址</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root &#x2F;home&#x2F;web1_root;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;web1;&#x2F;&#x2F;此处名称与上游服务器列表名称相同</span><br><span class="line">        proxy_read_timeout 300;</span><br><span class="line">        proxy_connect_timeout 300;</span><br><span class="line">        proxy_redirect     off;</span><br><span class="line"></span><br><span class="line">        proxy_set_header   X-Forwarded-Proto $scheme;</span><br><span class="line">        proxy_set_header   Host              $http_host;</span><br><span class="line">        proxy_set_header   X-Real-IP         $remote_addr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 3.配置转发后，监听的服务</span><br><span class="line">server &#123;</span><br><span class="line">    listen       9090;</span><br><span class="line">    server_name  127.0.0.1;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root   html;</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen       9091;</span><br><span class="line">    server_name  127.0.0.1;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root   html;</span><br><span class="line">        index  index2.html index2.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-nginx-vsCode-插件"><a href="#3-nginx-vsCode-插件" class="headerlink" title="3.nginx vsCode 插件"></a>3.nginx vsCode 插件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 插件名称：</span><br><span class="line">nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p>参照：<br><a href="https://blog.csdn.net/physicsdandan/article/details/45667357" target="_blank" rel="noopener">https://blog.csdn.net/physicsdandan/article/details/45667357</a></p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>进制运算</title>
+    <url>/2020/04/09/%E8%BF%9B%E5%88%B6%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<h2 id="计算机-进制"><a href="#计算机-进制" class="headerlink" title="计算机 进制"></a>计算机 进制</h2><p><img src="https://hbimg.huabanimg.com/076e9e1e556c998d25f0ff88d77b2e20b026c9c53ca2a-LqE6Vs_fw658" alt="image"></p>
+<blockquote>
+<p>在这个吵得人分不清东南西北的世界里，我们手里所持有的干干净净的初衷，不多了。握好了，别丢了。明天还要赶很远的路。</p>
+</blockquote>
+<h3 id="1-分类"><a href="#1-分类" class="headerlink" title="1.分类"></a>1.分类</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">二进制：0，1</span><br><span class="line">八进制：0，1，2，3，4，5，6，7</span><br><span class="line">十进制：0，1，2，3，4，5，6，7，8，9</span><br><span class="line">十六进制：0，1，2，3，4，5，6，7，8，9，A,B,C,D,E,F</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2-十进制转其他"><a href="#2-十进制转其他" class="headerlink" title="2.十进制转其他"></a>2.十进制转其他</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.十进制数除2&#x2F;8&#x2F;16取余</span><br><span class="line">2.将余数倒叙依次写出，补足满八位</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-二进制转其他"><a href="#3-二进制转其他" class="headerlink" title="3.二进制转其他"></a>3.二进制转其他</h3><h4 id="3-1二进制转十进制"><a href="#3-1二进制转十进制" class="headerlink" title="3.1二进制转十进制"></a>3.1二进制转十进制</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">个位：2的0次方；</span><br><span class="line">十位：2的1次方；</span><br><span class="line">百位：2的2次方；</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">小数点后第一位：2的-1次方；</span><br><span class="line">小数点后第二位：2的-2次方；</span><br><span class="line">小数点后第三位：2的-3次方；</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2二进制转八进制"><a href="#3-2二进制转八进制" class="headerlink" title="3.2二进制转八进制"></a>3.2二进制转八进制</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.将二进制的每三位数，转成八进制 的一位数；</span><br><span class="line">2.每三位转化规则如下：</span><br><span class="line">    右一：2的0次方；</span><br><span class="line">    右二：2的1次方；</span><br><span class="line">    右三：2的2次方；</span><br><span class="line">3.将三位之和相加；</span><br><span class="line">4.将所有和 拼接（从左至右）；</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3二进制转十六进制"><a href="#3-3二进制转十六进制" class="headerlink" title="3.3二进制转十六进制"></a>3.3二进制转十六进制</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.将二进制的每四位数，转成十六进制 的一位数；</span><br><span class="line">2.每三位转化规则如下：</span><br><span class="line">    右一：2的0次方；</span><br><span class="line">    右二：2的1次方；</span><br><span class="line">    右三：2的2次方；</span><br><span class="line">    右四：2的3次方；</span><br><span class="line">3.将四位之和相加；</span><br><span class="line">4.将所有和 拼接（从左至右）；</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-八进制转其他"><a href="#4-八进制转其他" class="headerlink" title="4.八进制转其他"></a>4.八进制转其他</h3><h4 id="4-1八进制转十进制"><a href="#4-1八进制转十进制" class="headerlink" title="4.1八进制转十进制"></a>4.1八进制转十进制</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">按位 乘 八的n次方相加；</span><br></pre></td></tr></table></figure>
+<h4 id="4-2八进制转二进制"><a href="#4-2八进制转二进制" class="headerlink" title="4.2八进制转二进制"></a>4.2八进制转二进制</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.将每位依次除2 取余；</span><br><span class="line">2.得出3位余数（不够补齐）；</span><br><span class="line">3.将 余数依次拼接（从左至右）；</span><br></pre></td></tr></table></figure>
+<h4 id="4-3八进制转十六进制"><a href="#4-3八进制转十六进制" class="headerlink" title="4.3八进制转十六进制"></a>4.3八进制转十六进制</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">将八进制转成二进制，再转成十六进制；</span><br></pre></td></tr></table></figure>
+<h3 id="5-十六进制转其他"><a href="#5-十六进制转其他" class="headerlink" title="5.十六进制转其他"></a>5.十六进制转其他</h3><h4 id="5-1十六进制转十进制"><a href="#5-1十六进制转十进制" class="headerlink" title="5.1十六进制转十进制"></a>5.1十六进制转十进制</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">按位 乘 十六的n次方相加；</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-2十六进制转二进制"><a href="#5-2十六进制转二进制" class="headerlink" title="5.2十六进制转二进制"></a>5.2十六进制转二进制</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.将每位依次除2 取余；</span><br><span class="line">2.得出4位余数（不够补齐）；</span><br><span class="line">3.将 余数依次拼接（从左至右）；</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-3十六进制转八进制"><a href="#5-3十六进制转八进制" class="headerlink" title="5.3十六进制转八进制"></a>5.3十六进制转八进制</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">将十六进制转成二进制，再转成八进制；</span><br></pre></td></tr></table></figure>
+
+<p>文章参照：<br><a href="https://jingyan.baidu.com/article/495ba84109665338b30ede98.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/495ba84109665338b30ede98.html</a></p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>计算机进制</tag>
+      </tags>
+  </entry>
+</search>
