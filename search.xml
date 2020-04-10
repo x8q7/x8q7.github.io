@@ -156,20 +156,6 @@
       </tags>
   </entry>
   <entry>
-    <title>release x8q7 blog</title>
-    <url>/2020/04/08/hi/</url>
-    <content><![CDATA[<h2 id="I’m-glad-to-tell-the-world-hello-world"><a href="#I’m-glad-to-tell-the-world-hello-world" class="headerlink" title="I’m glad to tell the world, hello world."></a>I’m glad to tell the world, hello world.</h2><blockquote>
-<p>愿世间的美好，从这里开始。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/04/08/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -186,6 +172,66 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>release x8q7 blog</title>
+    <url>/2020/04/08/hi/</url>
+    <content><![CDATA[<h2 id="I’m-glad-to-tell-the-world-hello-world"><a href="#I’m-glad-to-tell-the-world-hello-world" class="headerlink" title="I’m glad to tell the world, hello world."></a>I’m glad to tell the world, hello world.</h2><blockquote>
+<p>愿世间的美好，从这里开始。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【JavaScript高级教程】笔记-JSON篇</title>
+    <url>/2020/04/10/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E3%80%91%E7%AC%94%E8%AE%B0-JSON%E7%AF%87/</url>
+    <content><![CDATA[<h2 id="【JavaScript高级教程】笔记-JSON篇"><a href="#【JavaScript高级教程】笔记-JSON篇" class="headerlink" title="【JavaScript高级教程】笔记-JSON篇"></a>【JavaScript高级教程】笔记-JSON篇</h2><blockquote>
+<p>JavaScript Object Notation, Javascript 对象表示法</p>
+</blockquote>
+<p>注：JSON是一种数据格式，不是一种编程语言。</p>
+<h3 id="1-语法"><a href="#1-语法" class="headerlink" title="1.语法"></a>1.语法</h3><p>JSON的语法可以表示，三种类型的值：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 简单值：字符串，数值，布尔值，null。不支持 <code>undefined</code>。</li>
+<li><input checked="" disabled="" type="checkbox"> 对象：与JavaScript中对象相近，简单或者复杂键值对形式，但是，key 必须用双引号。</li>
+<li><input checked="" disabled="" type="checkbox"> 数组：与JavaScript中数组相近，值或者对象的有序列表。</li>
+</ul>
+<p>注：JSON不支持变量，函数，对象实例。</p>
+<h4 id="1-简单值的JSON形式"><a href="#1-简单值的JSON形式" class="headerlink" title="1.简单值的JSON形式"></a>1.简单值的JSON形式</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">数值： 5</span><br><span class="line">字符串： &quot;hello world!&quot;</span><br><span class="line">布尔值： 布尔值</span><br><span class="line">null： null</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-对象的JSON形式"><a href="#2-对象的JSON形式" class="headerlink" title="2.对象的JSON形式"></a>2.对象的JSON形式</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;nike&quot;,</span><br><span class="line">    &quot;age&quot;: 29</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">注：不要写成 单引号。</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-数组的JSON形式"><a href="#3-数组的JSON形式" class="headerlink" title="3.数组的JSON形式"></a>3.数组的JSON形式</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[25, &quot;hi&quot;, true]</span><br><span class="line"></span><br><span class="line">也可以是复杂的数组形式，内部值为数组或者对象。</span><br></pre></td></tr></table></figure>
+<h3 id="2-解析与序列化"><a href="#2-解析与序列化" class="headerlink" title="2.解析与序列化"></a>2.解析与序列化</h3><h4 id="1-序列化"><a href="#1-序列化" class="headerlink" title="1.序列化"></a>1.序列化</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">JSON.stringify(obj[,filter,indentation])</span><br></pre></td></tr></table></figure>
+<h5 id="1-参数"><a href="#1-参数" class="headerlink" title="1.参数"></a>1.参数</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">obj：要序列化的JavaScript对象；</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">filter：可以是数组形式，也可以是函数；</span><br><span class="line"></span><br><span class="line">1.数组形式：JSON.stringify()的结果只包含数组中列出的属性。</span><br><span class="line">eg:</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book, [&quot;title&quot;, &quot;edition&quot;]);</span><br><span class="line"></span><br><span class="line">2.函数形式：函数接收两个参数，key和value。函数返回值就是相应键的值。</span><br><span class="line">注：如果返回undefined，则对应的属性被忽略。</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book, function(key, value)&#123;</span><br><span class="line">    switch(key)&#123;</span><br><span class="line">        case &quot;authors&quot;:</span><br><span class="line">            return value.join(&quot;,&quot;);</span><br><span class="line">        </span><br><span class="line">        case &quot;year&quot;:</span><br><span class="line">            return 5000;</span><br><span class="line">        </span><br><span class="line">        case &quot;eiditon&quot;:</span><br><span class="line">            return undefined;</span><br><span class="line">        </span><br><span class="line">        default:</span><br><span class="line">            return value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">indentation: 控制结果中的缩进和空白符。</span><br><span class="line">注：最大缩进为10，大于10会自动转化为10。</span><br><span class="line"></span><br><span class="line">也可以使用制表符或者任意字符，用来填充。</span><br></pre></td></tr></table></figure>
+<h5 id="2-toJSON方法"><a href="#2-toJSON方法" class="headerlink" title="2.toJSON方法"></a>2.toJSON方法</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011,</span><br><span class="line">    toJSON: function()&#123;</span><br><span class="line">        return this.title</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book); &#x2F;&#x2F;&quot;Professional Javascript&quot;</span><br><span class="line"></span><br><span class="line">相当于复写了内部方法。</span><br></pre></td></tr></table></figure>
+<h5 id="3-序列化顺序"><a href="#3-序列化顺序" class="headerlink" title="3.序列化顺序"></a>3.序列化顺序</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.如果存在toJSON方法且能通过他取得有效值，则调用该方法，否则，返回对象本身；</span><br><span class="line">2.如果提供了参数二，则进行过滤。传入过滤器的值，是第一步返回的值；</span><br><span class="line">3.对第二步返回的值进行序列化；</span><br><span class="line">4.如果提供了参数三，则进行相应格式化；</span><br><span class="line"></span><br><span class="line">注：个人理解像递归函数。</span><br></pre></td></tr></table></figure>
+<h4 id="2-解析"><a href="#2-解析" class="headerlink" title="2.解析"></a>2.解析</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">JSON.stringify(obj[,reviver])</span><br></pre></td></tr></table></figure>
+<h5 id="1-参数-1"><a href="#1-参数-1" class="headerlink" title="1.参数"></a>1.参数</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">obj：要解析的JavaScript对象；</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">reviver: 还原函数；</span><br><span class="line">注：如果还原函数返回undefined，则从结果中删除相应的key；如果返回其他值，则正常解析；</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">eg:</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011,</span><br><span class="line">    releaseDate: new Date(2011, 11, 1)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book);</span><br><span class="line"></span><br><span class="line">var bookCopy &#x3D; JSON.parse(jsonText, function(key, value)&#123;</span><br><span class="line">    if (key &#x3D;&#x3D; &quot;releaseDate&quot;) &#123;</span><br><span class="line">        return new Date(value);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>JavaScript</tag>
+        <tag>JSON</tag>
+      </tags>
   </entry>
   <entry>
     <title>nodejs图片验证码</title>
@@ -226,6 +272,25 @@
       </tags>
   </entry>
   <entry>
+    <title>感悟2020-04-10</title>
+    <url>/2020/04/10/%E6%84%9F%E6%82%9F2020-04-10/</url>
+    <content><![CDATA[<h2 id="流民日记第二天"><a href="#流民日记第二天" class="headerlink" title="流民日记第二天"></a>流民日记第二天</h2><p>&emsp;&emsp;2020年4月10日，天气晴，心情阴。</p>
+<p>&emsp;&emsp;今天是失业的第二天，一天基本上都没有学习，上午看了下同学的问题（其实比较低级的错误，但是，我第一遍看代码并没有察觉），发现js基础的学习，是需要持续不断的复习。</p>
+<p>&emsp;&emsp;就目前而言，js语言及js语言的实践，还有很大一部分是不知道的，所以，接下来要做的，就是尽量去完善自己的知识体系。</p>
+<p>&emsp;&emsp;工作经验算起来，整整两年半，沉淀了多少东西，从自己写博客就感觉到了，其实，没多少。</p>
+<p>&emsp;&emsp;我要每天沉淀知识，每天更新自己的博客，不一定每天写日记，但是我会在重要的时间轴上，记录下来。</p>
+<p>&emsp;&emsp;相信自己，我可以。更强。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>感悟</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>进制运算</title>
     <url>/2020/04/09/%E8%BF%9B%E5%88%B6%E8%BF%90%E7%AE%97/</url>
     <content><![CDATA[<h2 id="计算机-进制"><a href="#计算机-进制" class="headerlink" title="计算机 进制"></a>计算机 进制</h2><p><img src="https://hbimg.huabanimg.com/076e9e1e556c998d25f0ff88d77b2e20b026c9c53ca2a-LqE6Vs_fw658" alt="image"></p>
@@ -261,25 +326,6 @@
       <tags>
         <tag>随笔</tag>
         <tag>计算机进制</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>感悟2020-04-10</title>
-    <url>/2020/04/10/%E6%84%9F%E6%82%9F2020-04-10/</url>
-    <content><![CDATA[<h2 id="流民日记第二天"><a href="#流民日记第二天" class="headerlink" title="流民日记第二天"></a>流民日记第二天</h2><p>&emsp;&emsp;2020年4月10日，天气晴，心情阴。</p>
-<p>&emsp;&emsp;今天是失业的第二天，一天基本上都没有学习，上午看了下同学的问题（其实比较低级的错误，但是，我第一遍看代码并没有察觉），发现js基础的学习，是需要持续不断的复习。</p>
-<p>&emsp;&emsp;就目前而言，js语言及js语言的实践，还有很大一部分是不知道的，所以，接下来要做的，就是尽量去完善自己的知识体系。</p>
-<p>&emsp;&emsp;工作经验算起来，整整两年半，沉淀了多少东西，从自己写博客就感觉到了，其实，没多少。</p>
-<p>&emsp;&emsp;我要每天沉淀知识，每天更新自己的博客，不一定每天写日记，但是我会在重要的时间轴上，记录下来。</p>
-<p>&emsp;&emsp;相信自己，我可以。更强。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>感悟</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>日记</tag>
       </tags>
   </entry>
 </search>

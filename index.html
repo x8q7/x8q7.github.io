@@ -73,6 +73,107 @@
     
     
     
+    <article id="post-【JavaScript高级教程】笔记-JSON篇" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/10/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E3%80%91%E7%AC%94%E8%AE%B0-JSON%E7%AF%87/"
+    >【JavaScript高级教程】笔记-JSON篇</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/10/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E3%80%91%E7%AC%94%E8%AE%B0-JSON%E7%AF%87/" class="article-date">
+  <time datetime="2020-04-10T14:29:40.000Z" itemprop="datePublished">2020-04-10</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a> / <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/%E6%8A%80%E6%9C%AF/">技术</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h2 id="【JavaScript高级教程】笔记-JSON篇"><a href="#【JavaScript高级教程】笔记-JSON篇" class="headerlink" title="【JavaScript高级教程】笔记-JSON篇"></a>【JavaScript高级教程】笔记-JSON篇</h2><blockquote>
+<p>JavaScript Object Notation, Javascript 对象表示法</p>
+</blockquote>
+<p>注：JSON是一种数据格式，不是一种编程语言。</p>
+<h3 id="1-语法"><a href="#1-语法" class="headerlink" title="1.语法"></a>1.语法</h3><p>JSON的语法可以表示，三种类型的值：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 简单值：字符串，数值，布尔值，null。不支持 <code>undefined</code>。</li>
+<li><input checked="" disabled="" type="checkbox"> 对象：与JavaScript中对象相近，简单或者复杂键值对形式，但是，key 必须用双引号。</li>
+<li><input checked="" disabled="" type="checkbox"> 数组：与JavaScript中数组相近，值或者对象的有序列表。</li>
+</ul>
+<p>注：JSON不支持变量，函数，对象实例。</p>
+<h4 id="1-简单值的JSON形式"><a href="#1-简单值的JSON形式" class="headerlink" title="1.简单值的JSON形式"></a>1.简单值的JSON形式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">数值： 5</span><br><span class="line">字符串： &quot;hello world!&quot;</span><br><span class="line">布尔值： 布尔值</span><br><span class="line">null： null</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-对象的JSON形式"><a href="#2-对象的JSON形式" class="headerlink" title="2.对象的JSON形式"></a>2.对象的JSON形式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;nike&quot;,</span><br><span class="line">    &quot;age&quot;: 29</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">注：不要写成 单引号。</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-数组的JSON形式"><a href="#3-数组的JSON形式" class="headerlink" title="3.数组的JSON形式"></a>3.数组的JSON形式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[25, &quot;hi&quot;, true]</span><br><span class="line"></span><br><span class="line">也可以是复杂的数组形式，内部值为数组或者对象。</span><br></pre></td></tr></table></figure>
+<h3 id="2-解析与序列化"><a href="#2-解析与序列化" class="headerlink" title="2.解析与序列化"></a>2.解析与序列化</h3><h4 id="1-序列化"><a href="#1-序列化" class="headerlink" title="1.序列化"></a>1.序列化</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.stringify(obj[,filter,indentation])</span><br></pre></td></tr></table></figure>
+<h5 id="1-参数"><a href="#1-参数" class="headerlink" title="1.参数"></a>1.参数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj：要序列化的JavaScript对象；</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">filter：可以是数组形式，也可以是函数；</span><br><span class="line"></span><br><span class="line">1.数组形式：JSON.stringify()的结果只包含数组中列出的属性。</span><br><span class="line">eg:</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book, [&quot;title&quot;, &quot;edition&quot;]);</span><br><span class="line"></span><br><span class="line">2.函数形式：函数接收两个参数，key和value。函数返回值就是相应键的值。</span><br><span class="line">注：如果返回undefined，则对应的属性被忽略。</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book, function(key, value)&#123;</span><br><span class="line">    switch(key)&#123;</span><br><span class="line">        case &quot;authors&quot;:</span><br><span class="line">            return value.join(&quot;,&quot;);</span><br><span class="line">        </span><br><span class="line">        case &quot;year&quot;:</span><br><span class="line">            return 5000;</span><br><span class="line">        </span><br><span class="line">        case &quot;eiditon&quot;:</span><br><span class="line">            return undefined;</span><br><span class="line">        </span><br><span class="line">        default:</span><br><span class="line">            return value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">indentation: 控制结果中的缩进和空白符。</span><br><span class="line">注：最大缩进为10，大于10会自动转化为10。</span><br><span class="line"></span><br><span class="line">也可以使用制表符或者任意字符，用来填充。</span><br></pre></td></tr></table></figure>
+<h5 id="2-toJSON方法"><a href="#2-toJSON方法" class="headerlink" title="2.toJSON方法"></a>2.toJSON方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011,</span><br><span class="line">    toJSON: function()&#123;</span><br><span class="line">        return this.title</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book); &#x2F;&#x2F;&quot;Professional Javascript&quot;</span><br><span class="line"></span><br><span class="line">相当于复写了内部方法。</span><br></pre></td></tr></table></figure>
+<h5 id="3-序列化顺序"><a href="#3-序列化顺序" class="headerlink" title="3.序列化顺序"></a>3.序列化顺序</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.如果存在toJSON方法且能通过他取得有效值，则调用该方法，否则，返回对象本身；</span><br><span class="line">2.如果提供了参数二，则进行过滤。传入过滤器的值，是第一步返回的值；</span><br><span class="line">3.对第二步返回的值进行序列化；</span><br><span class="line">4.如果提供了参数三，则进行相应格式化；</span><br><span class="line"></span><br><span class="line">注：个人理解像递归函数。</span><br></pre></td></tr></table></figure>
+<h4 id="2-解析"><a href="#2-解析" class="headerlink" title="2.解析"></a>2.解析</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.stringify(obj[,reviver])</span><br></pre></td></tr></table></figure>
+<h5 id="1-参数-1"><a href="#1-参数-1" class="headerlink" title="1.参数"></a>1.参数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj：要解析的JavaScript对象；</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">reviver: 还原函数；</span><br><span class="line">注：如果还原函数返回undefined，则从结果中删除相应的key；如果返回其他值，则正常解析；</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">eg:</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011,</span><br><span class="line">    releaseDate: new Date(2011, 11, 1)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book);</span><br><span class="line"></span><br><span class="line">var bookCopy &#x3D; JSON.parse(jsonText, function(key, value)&#123;</span><br><span class="line">    if (key &#x3D;&#x3D; &quot;releaseDate&quot;) &#123;</span><br><span class="line">        return new Date(value);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/" rel="tag">JSON</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-感悟2020-04-10" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -735,100 +836,6 @@
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
-    <article id="post-进制运算" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/04/09/%E8%BF%9B%E5%88%B6%E8%BF%90%E7%AE%97/"
-    >进制运算</a> 
-</h2>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/04/09/%E8%BF%9B%E5%88%B6%E8%BF%90%E7%AE%97/" class="article-date">
-  <time datetime="2020-04-09T03:16:37.000Z" itemprop="datePublished">2020-04-09</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a> / <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/%E6%8A%80%E6%9C%AF/">技术</a>
-  </div>
-
-      
-      
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-
-      
-      <h2 id="计算机-进制"><a href="#计算机-进制" class="headerlink" title="计算机 进制"></a>计算机 进制</h2><p><img src="https://hbimg.huabanimg.com/076e9e1e556c998d25f0ff88d77b2e20b026c9c53ca2a-LqE6Vs_fw658" alt="image"></p>
-<blockquote>
-<p>在这个吵得人分不清东南西北的世界里，我们手里所持有的干干净净的初衷，不多了。握好了，别丢了。明天还要赶很远的路。</p>
-</blockquote>
-<h3 id="1-分类"><a href="#1-分类" class="headerlink" title="1.分类"></a>1.分类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">二进制：0，1</span><br><span class="line">八进制：0，1，2，3，4，5，6，7</span><br><span class="line">十进制：0，1，2，3，4，5，6，7，8，9</span><br><span class="line">十六进制：0，1，2，3，4，5，6，7，8，9，A,B,C,D,E,F</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="2-十进制转其他"><a href="#2-十进制转其他" class="headerlink" title="2.十进制转其他"></a>2.十进制转其他</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.十进制数除2&#x2F;8&#x2F;16取余</span><br><span class="line">2.将余数倒叙依次写出，补足满八位</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-二进制转其他"><a href="#3-二进制转其他" class="headerlink" title="3.二进制转其他"></a>3.二进制转其他</h3><h4 id="3-1二进制转十进制"><a href="#3-1二进制转十进制" class="headerlink" title="3.1二进制转十进制"></a>3.1二进制转十进制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">个位：2的0次方；</span><br><span class="line">十位：2的1次方；</span><br><span class="line">百位：2的2次方；</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">小数点后第一位：2的-1次方；</span><br><span class="line">小数点后第二位：2的-2次方；</span><br><span class="line">小数点后第三位：2的-3次方；</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-2二进制转八进制"><a href="#3-2二进制转八进制" class="headerlink" title="3.2二进制转八进制"></a>3.2二进制转八进制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.将二进制的每三位数，转成八进制 的一位数；</span><br><span class="line">2.每三位转化规则如下：</span><br><span class="line">    右一：2的0次方；</span><br><span class="line">    右二：2的1次方；</span><br><span class="line">    右三：2的2次方；</span><br><span class="line">3.将三位之和相加；</span><br><span class="line">4.将所有和 拼接（从左至右）；</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-3二进制转十六进制"><a href="#3-3二进制转十六进制" class="headerlink" title="3.3二进制转十六进制"></a>3.3二进制转十六进制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.将二进制的每四位数，转成十六进制 的一位数；</span><br><span class="line">2.每三位转化规则如下：</span><br><span class="line">    右一：2的0次方；</span><br><span class="line">    右二：2的1次方；</span><br><span class="line">    右三：2的2次方；</span><br><span class="line">    右四：2的3次方；</span><br><span class="line">3.将四位之和相加；</span><br><span class="line">4.将所有和 拼接（从左至右）；</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-八进制转其他"><a href="#4-八进制转其他" class="headerlink" title="4.八进制转其他"></a>4.八进制转其他</h3><h4 id="4-1八进制转十进制"><a href="#4-1八进制转十进制" class="headerlink" title="4.1八进制转十进制"></a>4.1八进制转十进制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">按位 乘 八的n次方相加；</span><br></pre></td></tr></table></figure>
-<h4 id="4-2八进制转二进制"><a href="#4-2八进制转二进制" class="headerlink" title="4.2八进制转二进制"></a>4.2八进制转二进制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.将每位依次除2 取余；</span><br><span class="line">2.得出3位余数（不够补齐）；</span><br><span class="line">3.将 余数依次拼接（从左至右）；</span><br></pre></td></tr></table></figure>
-<h4 id="4-3八进制转十六进制"><a href="#4-3八进制转十六进制" class="headerlink" title="4.3八进制转十六进制"></a>4.3八进制转十六进制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将八进制转成二进制，再转成十六进制；</span><br></pre></td></tr></table></figure>
-<h3 id="5-十六进制转其他"><a href="#5-十六进制转其他" class="headerlink" title="5.十六进制转其他"></a>5.十六进制转其他</h3><h4 id="5-1十六进制转十进制"><a href="#5-1十六进制转十进制" class="headerlink" title="5.1十六进制转十进制"></a>5.1十六进制转十进制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">按位 乘 十六的n次方相加；</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-2十六进制转二进制"><a href="#5-2十六进制转二进制" class="headerlink" title="5.2十六进制转二进制"></a>5.2十六进制转二进制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.将每位依次除2 取余；</span><br><span class="line">2.得出4位余数（不够补齐）；</span><br><span class="line">3.将 余数依次拼接（从左至右）；</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-3十六进制转八进制"><a href="#5-3十六进制转八进制" class="headerlink" title="5.3十六进制转八进制"></a>5.3十六进制转八进制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将十六进制转成二进制，再转成八进制；</span><br></pre></td></tr></table></figure>
-
-<p>文章参照：<br><a href="https://jingyan.baidu.com/article/495ba84109665338b30ede98.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/495ba84109665338b30ede98.html</a></p>
-
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BF%9B%E5%88%B6/" rel="tag">计算机进制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
 
 
     </footer>
