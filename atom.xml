@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-09T04:09:40.746Z</updated>
+  <updated>2020-04-10T13:08:06.168Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>感悟2020-04-10</title>
+    <link href="http://yoursite.com/2020/04/10/%E6%84%9F%E6%82%9F2020-04-10/"/>
+    <id>http://yoursite.com/2020/04/10/%E6%84%9F%E6%82%9F2020-04-10/</id>
+    <published>2020-04-10T13:02:05.000Z</published>
+    <updated>2020-04-10T13:08:06.168Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="流民日记第二天"><a href="#流民日记第二天" class="headerlink" title="流民日记第二天"></a>流民日记第二天</h2><p>&emsp;&emsp;2020年4月10日，天气晴，心情阴。</p><p>&emsp;&emsp;今天是失业的第二天，一天基本上都没有学习，上午看了下同学的问题（其实比较低级的错误，但是，我第一遍看代码并没有察觉），发现js基础的学习，是需要持续不断的复习。</p><p>&emsp;&emsp;就目前而言，js语言及js语言的实践，还有很大一部分是不知道的，所以，接下来要做的，就是尽量去完善自己的知识体系。</p><p>&emsp;&emsp;工作经验算起来，整整两年半，沉淀了多少东西，从自己写博客就感觉到了，其实，没多少。</p><p>&emsp;&emsp;我要每天沉淀知识，每天更新自己的博客，不一定每天写日记，但是我会在重要的时间轴上，记录下来。</p><p>&emsp;&emsp;相信自己，我可以。更强。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;流民日记第二天&quot;&gt;&lt;a href=&quot;#流民日记第二天&quot; class=&quot;headerlink&quot; title=&quot;流民日记第二天&quot;&gt;&lt;/a&gt;流民日记第二天&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;2020年4月10日，天气晴，心情阴。&lt;/p&gt;
+&lt;p&gt;&amp;emsp;&amp;emsp
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="感悟" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/%E6%84%9F%E6%82%9F/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="日记" scheme="http://yoursite.com/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript位操作</title>
