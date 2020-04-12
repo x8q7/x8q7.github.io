@@ -73,6 +73,127 @@
     
     
     
+    <article id="post-【JavaScript高级教程】笔记-网络与跨域" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/12/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E3%80%91%E7%AC%94%E8%AE%B0-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B7%A8%E5%9F%9F/"
+    >【JavaScript高级教程】笔记-网络与跨域</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/12/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E3%80%91%E7%AC%94%E8%AE%B0-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B7%A8%E5%9F%9F/" class="article-date">
+  <time datetime="2020-04-12T13:35:41.000Z" itemprop="datePublished">2020-04-12</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a> / <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/%E6%8A%80%E6%9C%AF/">技术</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h2 id="网络与跨域"><a href="#网络与跨域" class="headerlink" title="网络与跨域"></a>网络与跨域</h2><h3 id="1-跨域"><a href="#1-跨域" class="headerlink" title="1.跨域"></a>1.跨域</h3><blockquote>
+<p>同源策略：相同的域，相同的端口，相同的协议。</p>
+</blockquote>
+<h4 id="1-图像ping"><a href="#1-图像ping" class="headerlink" title="1.图像ping"></a>1.图像ping</h4><p>一个网页可以从任何网页中加载图像，不用担心跨域。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var img &#x3D; new Image();</span><br><span class="line">img.onload &#x3D; img.onerror &#x3D; function()&#123;</span><br><span class="line">    console.log(&#39;done&#39;);</span><br><span class="line">&#125;</span><br><span class="line">img.src &#x3D; &quot;http:&#x2F;&#x2F;www.example.com&#x2F;test?name&#x3D;Nicholas&quot;;</span><br></pre></td></tr></table></figure>
+<p>请求从设置 src 属性那一刻开始，向服务端发送了一个参数。</p>
+<ol>
+<li>只能发送get请求；</li>
+<li>无法接收响应；</li>
+<li>只能从 浏览器=&gt;服务器单项通讯，多用于 跟踪用户点击页面 或 动态广告曝光次数；</li>
+</ol>
+<h4 id="2-JSONP"><a href="#2-JSONP" class="headerlink" title="2.JSONP"></a>2.JSONP</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function handleResponse(response)&#123;</span><br><span class="line">    console.log(response);</span><br><span class="line">&#125;</span><br><span class="line">var script &#x3D; document.createElement(&quot;script&quot;);</span><br><span class="line">script.src &#x3D; &quot;http:&#x2F;&#x2F;freegeoip.net&#x2F;json&#x2F;?callback&#x3D;handleResponse&quot;;</span><br><span class="line">document.body.insertBefore(script, document.body.firstChild);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>使用时 可以为<code>src</code> 属性指定一个跨域URL；</li>
+<li>与<code>&lt;img&gt;</code>元素类似，都有能力不受限制的从其他域加载资源；</li>
+<li>需确定其他域的安全性，有可能响应中夹带一些恶意代码；</li>
+<li>确定JSONP 响应的失败与否是不容易的；</li>
+</ol>
+<h3 id="2-服务端主动推送"><a href="#2-服务端主动推送" class="headerlink" title="2.服务端主动推送"></a>2.服务端主动推送</h3><h4 id="1-SSE"><a href="#1-SSE" class="headerlink" title="1.SSE"></a>1.SSE</h4><blockquote>
+<p>SSE（Server-Sent Events,服务器发送事件）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var source &#x3D; new EventSource(&quot;myevents.php&quot;);</span><br><span class="line">source.onmessage &#x3D; function(event)&#123;</span><br><span class="line">    var data &#x3D; event.data;</span><br><span class="line">    &#x2F;&#x2F;处理数据</span><br><span class="line">&#125;</span><br><span class="line">source.close();&#x2F;&#x2F;关闭</span><br></pre></td></tr></table></figure>
+<ol>
+<li>url必须与创建对象的页面同源。</li>
+<li><code>source</code> 实例有一个属性<code>readyState</code>，0 表示正连接到服务器，1 表示打开了连接， 2 表示关闭连接；</li>
+<li>服务器事件会 通过一个持久的 HTTP响应发送，响应 MIME 类型为 text/event-stream。响应格式为纯文本；</li>
+<li>服务器上生成事件流，需要多添加一行空白行，前端才会触发<code>message</code>事件；</li>
+<li>通过 <code>id:</code>前缀可以给特定的事件，指定一个关联的ID；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data: foo</span><br><span class="line">id: 1</span><br></pre></td></tr></table></figure></li>
+<li>设置ID后，EventSource 对象会跟踪上一次触发的事件。</li>
+<li>长轮询，页面发起一个请求，到服务器后一直保持连接，直到有数据可发送。发送完成后，立刻发起一个新请求；</li>
+</ol>
+<h4 id="2-Web-Sockets"><a href="#2-Web-Sockets" class="headerlink" title="2. Web Sockets"></a>2. Web Sockets</h4><blockquote>
+<p>Web Sockets 的目标是 在一个独立的持久连接上提供全双工，双向通信。</p>
+</blockquote>
+<ol>
+<li>JavaScript创建Web Sockets 后，会有一个 HTTP请求发送到浏览器以发起连接。</li>
+<li>取得服务器响应后，建立的连接就会使用HTTP升级，从 HTTP协议 交换为 Web Socket协议；<code>ws://</code> 或 <code>wss://</code></li>
+<li>同源策略对 Web Sockets 不适用，因此可以通过他打开到任何站点的连接，是否建立通讯，完全取决于服务器；</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var socket &#x3D; new WebSocket(&quot;ws:&#x2F;&#x2F;www.example.com&#x2F;server.php&quot;);</span><br><span class="line">socket.onopen &#x3D; function()&#123;</span><br><span class="line">    console.log(&quot;Connection estalished&quot;);</span><br><span class="line">&#125;</span><br><span class="line">socket.onerror &#x3D; function()&#123;</span><br><span class="line">    console.log(&quot;Connection error&quot;);</span><br><span class="line">&#125;</span><br><span class="line">socket.onclose &#x3D; function()&#123;</span><br><span class="line">    console.log(&quot;Connection closed&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-SSE-与-Web-Sockets"><a href="#3-SSE-与-Web-Sockets" class="headerlink" title="3. SSE 与 Web Sockets"></a>3. SSE 与 Web Sockets</h4><ol>
+<li>web socket 因为协议不同，需要有自由度建立和维护Web Socket服务器；</li>
+<li>常规http通讯，实现服务器推送，SSE就可以满足；</li>
+<li>双向通讯就必须用 Web Sockets；</li>
+</ol>
+<h3 id="3-安全"><a href="#3-安全" class="headerlink" title="3.安全"></a>3.安全</h3><blockquote>
+<p>CSRF：Cross-Site Request Forgery, 跨站点请求伪造。</p>
+</blockquote>
+<ol>
+<li>要求以 SSL连接来访问可以XHR请求的资源；</li>
+<li>每次请求附带 经过相应算法计算得到的验证码（添加sign）；</li>
+</ol>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%A8%E5%9F%9F/" rel="tag">跨域</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-【JavaScript高级教程】笔记-JSON篇" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -754,88 +875,6 @@
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
-    <article id="post-centos网络配置" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/04/09/centos%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/"
-    >centos网络配置</a> 
-</h2>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/04/09/centos%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" class="article-date">
-  <time datetime="2020-04-09T03:22:13.000Z" itemprop="datePublished">2020-04-09</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a> / <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/%E6%8A%80%E6%9C%AF/">技术</a>
-  </div>
-
-      
-      
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-
-      
-      <h2 id="虚拟机安装centos配置网络"><a href="#虚拟机安装centos配置网络" class="headerlink" title="虚拟机安装centos配置网络"></a>虚拟机安装centos配置网络</h2><p><img src="https://hbimg.huabanimg.com/4116e135d96f6f729bfd44b56a814fd9e85005483cb57-KiGDbm_fw658" alt="来自花瓣"></p>
-<blockquote>
-<p>曾经拥有的东西被夺走，并不代表就会回到原来没有那种东西的时候。</p>
-</blockquote>
-<h3 id="1-安装centos"><a href="#1-安装centos" class="headerlink" title="1.安装centos"></a>1.安装centos</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">添加虚拟机</span><br></pre></td></tr></table></figure>
-<h3 id="2-修改-配置ifcfg-ens33-文件"><a href="#2-修改-配置ifcfg-ens33-文件" class="headerlink" title="2.修改 配置ifcfg-ens33 文件"></a>2.修改 配置ifcfg-ens33 文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NM_CONTROLLED&#x3D;no #表示该接口将通过该配置文件进行设置，而不是通过网络管理器进行管理</span><br><span class="line">ONBOOT&#x3D;yes #开机启动</span><br><span class="line">BOOTPROTO&#x3D;static #静态IP</span><br><span class="line">IPADDR&#x3D;192.168.59.134 #本机地址</span><br><span class="line">NETMASK&#x3D;255.255.255.0 #子网掩码</span><br><span class="line">GATEWAY&#x3D;192.168.59.2 #默认网关</span><br><span class="line">DNS1&#x3D;8.8.8.8</span><br><span class="line">DNS2&#x3D;8.8.4.4</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h3 id="3-设置桥接模式"><a href="#3-设置桥接模式" class="headerlink" title="3.设置桥接模式"></a>3.设置桥接模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.关闭虚拟机</span><br><span class="line">2.设置桥接模式</span><br></pre></td></tr></table></figure>
-
-<p>参考文献：<br><a href="https://blog.csdn.net/zhangchao_cn/article/details/85246558" target="_blank" rel="noopener">https://blog.csdn.net/zhangchao_cn/article/details/85246558</a></p>
-
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
 
 
     </footer>
