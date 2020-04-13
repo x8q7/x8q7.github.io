@@ -73,6 +73,109 @@
     
     
     
+    <article id="post-Android生成签名证书keystore" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/13/Android%E7%94%9F%E6%88%90%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6keystore/"
+    >Android生成签名证书keystore</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/13/Android%E7%94%9F%E6%88%90%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6keystore/" class="article-date">
+  <time datetime="2020-04-13T14:37:24.000Z" itemprop="datePublished">2020-04-13</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h2 id="Android-如何生成-keystore"><a href="#Android-如何生成-keystore" class="headerlink" title="Android-如何生成 keystore"></a>Android-如何生成 keystore</h2><blockquote>
+<p><strong>Be a king in your mind, but do the work of a servant.</strong></p>
+</blockquote>
+<p><img src="http://img.hb.aicdn.com/7d3960b515dc2eb1a63aa7875cca213faf0a06f012948-Dz5yHE_fw658" alt=""></p>
+<p><strong>环境</strong>：Java，建议 Java 1.8.0以上；</p>
+<h3 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h3><p>进入该目录下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Java\jdk1.8.0_151\bin</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shift + 右键       “在此处打开命令行”</span><br></pre></td></tr></table></figure>
+<h3 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h3><p>复制以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey -alias android.keystore -keyalg RSA -validity 20000 -keystore android.keystore</span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<p>-keytool是工具名称</p>
+<p>-genkey 生成文件，意味着执行的是生成数字证书操作</p>
+<p>-alias 别名</p>
+<p>-keyalg 加密算法，表示生成密钥文件所采用的算法为RSA；</p>
+<p>-validity 有效期，表示该数字证书的有效期为20000天，意味着20000天之后该证书将失效</p>
+<p>-keystore 文件名，表示生成的数字证书的文件名为</p>
+<p>==注：如出现 命令行显示，？？？？？情况，请阅读下文。==</p>
+<h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3"></a>step 3</h3><p><img src="https://img-blog.csdn.net/20160917103553874?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>依次填入 相关信息后，会在JDK的 bin目录下，生成 keystore 文件。</p>
+<p>问题一：<br>如出现命令行，？？？？？情况，可进行如下操作：</p>
+<ol>
+<li>可按下  Ctrl + C 退出；</li>
+<li>输入 chcp 936;</li>
+</ol>
+<p>补充部分字符编码对应代码：<br>    65001——UTF-8</p>
+<pre><code>936——简体中文
+
+950——繁体中文
+
+437——美国/加拿大英语
+
+932——日文
+
+949——韩文
+
+866——俄文</code></pre><p>问题二：</p>
+<p>显示中文后，发现输入密码无效，其实，只是没有显示，输入正确即可。</p>
+<p>文章参考：<br><a href="https://blog.csdn.net/zhaokx3/article/details/52561761" target="_blank" rel="noopener">https://blog.csdn.net/zhaokx3/article/details/52561761</a><br><a href="https://www.cnblogs.com/qq78292959/p/3785832.html" target="_blank" rel="noopener">https://www.cnblogs.com/qq78292959/p/3785832.html</a></p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-【JavaScript高级教程】笔记-网络与跨域" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -797,84 +900,6 @@
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plist%E6%96%87%E4%BB%B6/" rel="tag">plist文件</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
-    <article id="post-fiddler安卓抓包" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/04/09/fiddler%E5%AE%89%E5%8D%93%E6%8A%93%E5%8C%85/"
-    >fiddler安卓抓包</a> 
-</h2>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/04/09/fiddler%E5%AE%89%E5%8D%93%E6%8A%93%E5%8C%85/" class="article-date">
-  <time datetime="2020-04-09T03:25:53.000Z" itemprop="datePublished">2020-04-09</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a> / <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/%E6%8A%80%E6%9C%AF/">技术</a>
-  </div>
-
-      
-      
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-
-      
-      <h2 id="fiddler对安卓APP抓包"><a href="#fiddler对安卓APP抓包" class="headerlink" title="fiddler对安卓APP抓包"></a>fiddler对安卓APP抓包</h2><p><img src="http://hbimg.huabanimg.com/0deb5da511be824e89d90c2f91301d91e9cdbe212d5db-uP39rc_fw658" alt="来自花瓣"></p>
-<blockquote>
-<p>心太软的人快乐是不容易的，别人伤害她或她伤害别人都让她在心里病一场。</p>
-</blockquote>
-<h3 id="1-导出证书"><a href="#1-导出证书" class="headerlink" title="1.导出证书"></a>1.导出证书</h3><h3 id="2-手机安装证书"><a href="#2-手机安装证书" class="headerlink" title="2.手机安装证书"></a>2.手机安装证书</h3><h3 id="3-勾选配置项"><a href="#3-勾选配置项" class="headerlink" title="3.勾选配置项"></a>3.勾选配置项</h3><pre><code>1.HTTPS 解密
-
-2.忽略服务器证书错误
-
-3.允许远程计算机链接</code></pre><h3 id="4-设置手机finddler-代理（电脑IP-amp-finddler-port）"><a href="#4-设置手机finddler-代理（电脑IP-amp-finddler-port）" class="headerlink" title="4.设置手机finddler 代理（电脑IP &amp; finddler port）"></a>4.设置手机finddler 代理（电脑IP &amp; finddler port）</h3><h3 id="5-检查手机电脑链接同一网络"><a href="#5-检查手机电脑链接同一网络" class="headerlink" title="5.检查手机电脑链接同一网络"></a>5.检查手机电脑链接同一网络</h3><h3 id="6-开心调试"><a href="#6-开心调试" class="headerlink" title="6.开心调试"></a>6.开心调试</h3><p>感谢原文：<a href="https://www.cnblogs.com/king8/p/9016007.html" target="_blank" rel="noopener">https://www.cnblogs.com/king8/p/9016007.html</a></p>
-
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
 
 
     </footer>

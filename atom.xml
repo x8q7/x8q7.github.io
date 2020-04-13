@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-12T13:43:46.476Z</updated>
+  <updated>2020-04-13T14:38:16.580Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android生成签名证书keystore</title>
+    <link href="http://yoursite.com/2020/04/13/Android%E7%94%9F%E6%88%90%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6keystore/"/>
+    <id>http://yoursite.com/2020/04/13/Android%E7%94%9F%E6%88%90%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6keystore/</id>
+    <published>2020-04-13T14:37:24.000Z</published>
+    <updated>2020-04-13T14:38:16.580Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Android-如何生成-keystore"><a href="#Android-如何生成-keystore" class="headerlink" title="Android-如何生成 keystore"></a>Android-如何生成 keystore</h2><blockquote><p><strong>Be a king in your mind, but do the work of a servant.</strong></p></blockquote><p><img src="http://img.hb.aicdn.com/7d3960b515dc2eb1a63aa7875cca213faf0a06f012948-Dz5yHE_fw658" alt=""></p><p><strong>环境</strong>：Java，建议 Java 1.8.0以上；</p><h3 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h3><p>进入该目录下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Java\jdk1.8.0_151\bin</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shift + 右键       “在此处打开命令行”</span><br></pre></td></tr></table></figure><h3 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h3><p>复制以下命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey -alias android.keystore -keyalg RSA -validity 20000 -keystore android.keystore</span><br></pre></td></tr></table></figure><p>参数说明：</p><p>-keytool是工具名称</p><p>-genkey 生成文件，意味着执行的是生成数字证书操作</p><p>-alias 别名</p><p>-keyalg 加密算法，表示生成密钥文件所采用的算法为RSA；</p><p>-validity 有效期，表示该数字证书的有效期为20000天，意味着20000天之后该证书将失效</p><p>-keystore 文件名，表示生成的数字证书的文件名为</p><p>==注：如出现 命令行显示，？？？？？情况，请阅读下文。==</p><h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3"></a>step 3</h3><p><img src="https://img-blog.csdn.net/20160917103553874?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p><p>依次填入 相关信息后，会在JDK的 bin目录下，生成 keystore 文件。</p><p>问题一：<br>如出现命令行，？？？？？情况，可进行如下操作：</p><ol><li>可按下  Ctrl + C 退出；</li><li>输入 chcp 936;</li></ol><p>补充部分字符编码对应代码：<br>    65001——UTF-8</p><pre><code>936——简体中文950——繁体中文437——美国/加拿大英语932——日文949——韩文866——俄文</code></pre><p>问题二：</p><p>显示中文后，发现输入密码无效，其实，只是没有显示，输入正确即可。</p><p>文章参考：<br><a href="https://blog.csdn.net/zhaokx3/article/details/52561761" target="_blank" rel="noopener">https://blog.csdn.net/zhaokx3/article/details/52561761</a><br><a href="https://www.cnblogs.com/qq78292959/p/3785832.html" target="_blank" rel="noopener">https://www.cnblogs.com/qq78292959/p/3785832.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Android-如何生成-keystore&quot;&gt;&lt;a href=&quot;#Android-如何生成-keystore&quot; class=&quot;headerlink&quot; title=&quot;Android-如何生成 keystore&quot;&gt;&lt;/a&gt;Android-如何生成 keystore&lt;/
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>【JavaScript高级教程】笔记-网络与跨域</title>
