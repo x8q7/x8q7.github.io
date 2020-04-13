@@ -16,7 +16,7 @@
       </categories>
       <tags>
         <tag>随笔</tag>
-        <tag>javascript</tag>
+        <tag>JavaScript</tag>
         <tag>位</tag>
       </tags>
   </entry>
@@ -321,25 +321,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【Nginx笔记】反向代理，资源压缩</title>
-    <url>/2020/04/08/%E3%80%90Nginx%E7%AC%94%E8%AE%B0%E3%80%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%8C%E8%B5%84%E6%BA%90%E5%8E%8B%E7%BC%A9/</url>
-    <content><![CDATA[<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><h3 id="1-资源压缩"><a href="#1-资源压缩" class="headerlink" title="1.资源压缩"></a>1.资源压缩</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 开启gzip 压缩</span><br><span class="line">gzip on;</span><br><span class="line"># 设置gzip所需的http协议最低版本 （HTTP&#x2F;1.1, HTTP&#x2F;1.0）</span><br><span class="line">gzip_http_version 1.1;</span><br><span class="line"># 设置压缩级别，压缩级别越高压缩时间越长  （1-9）</span><br><span class="line">gzip_comp_level 4;</span><br><span class="line"># 设置压缩的最小字节数， 页面Content-Length获取</span><br><span class="line">gzip_min_length 1000;</span><br><span class="line"># 设置压缩文件的类型  （text&#x2F;html)</span><br><span class="line">gzip_types text&#x2F;plain application&#x2F;javascript text&#x2F;css;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-反向代理（分流）"><a href="#2-反向代理（分流）" class="headerlink" title="2.反向代理（分流）"></a>2.反向代理（分流）</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 1.定义上游服务器列表组</span><br><span class="line">upstream web1 &#123;</span><br><span class="line">    server 127.0.0.1:9090 weight&#x3D;1;</span><br><span class="line">    server 127.0.0.1:9091 weight&#x3D;1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2.定义服务 用于转发</span><br><span class="line">server&#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    # using web1 sub domain to access</span><br><span class="line">    server_name 127.0.0.1;&#x2F;&#x2F;服务监听地址</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root &#x2F;home&#x2F;web1_root;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;web1;&#x2F;&#x2F;此处名称与上游服务器列表名称相同</span><br><span class="line">        proxy_read_timeout 300;</span><br><span class="line">        proxy_connect_timeout 300;</span><br><span class="line">        proxy_redirect     off;</span><br><span class="line"></span><br><span class="line">        proxy_set_header   X-Forwarded-Proto $scheme;</span><br><span class="line">        proxy_set_header   Host              $http_host;</span><br><span class="line">        proxy_set_header   X-Real-IP         $remote_addr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 3.配置转发后，监听的服务</span><br><span class="line">server &#123;</span><br><span class="line">    listen       9090;</span><br><span class="line">    server_name  127.0.0.1;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root   html;</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen       9091;</span><br><span class="line">    server_name  127.0.0.1;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root   html;</span><br><span class="line">        index  index2.html index2.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-nginx-vsCode-插件"><a href="#3-nginx-vsCode-插件" class="headerlink" title="3.nginx vsCode 插件"></a>3.nginx vsCode 插件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 插件名称：</span><br><span class="line">nginx.conf</span><br></pre></td></tr></table></figure>
-
-<p>参照：<br><a href="https://blog.csdn.net/physicsdandan/article/details/45667357" target="_blank" rel="noopener">https://blog.csdn.net/physicsdandan/article/details/45667357</a></p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>nginx</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>感悟2020-04-10</title>
     <url>/2020/04/10/%E6%84%9F%E6%82%9F2020-04-10/</url>
     <content><![CDATA[<h2 id="流民日记第二天"><a href="#流民日记第二天" class="headerlink" title="流民日记第二天"></a>流民日记第二天</h2><p>&emsp;&emsp;2020年4月10日，天气晴，心情阴。</p>
@@ -356,6 +337,25 @@
       <tags>
         <tag>随笔</tag>
         <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【Nginx笔记】反向代理，资源压缩</title>
+    <url>/2020/04/08/%E3%80%90Nginx%E7%AC%94%E8%AE%B0%E3%80%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%8C%E8%B5%84%E6%BA%90%E5%8E%8B%E7%BC%A9/</url>
+    <content><![CDATA[<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><h3 id="1-资源压缩"><a href="#1-资源压缩" class="headerlink" title="1.资源压缩"></a>1.资源压缩</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 开启gzip 压缩</span><br><span class="line">gzip on;</span><br><span class="line"># 设置gzip所需的http协议最低版本 （HTTP&#x2F;1.1, HTTP&#x2F;1.0）</span><br><span class="line">gzip_http_version 1.1;</span><br><span class="line"># 设置压缩级别，压缩级别越高压缩时间越长  （1-9）</span><br><span class="line">gzip_comp_level 4;</span><br><span class="line"># 设置压缩的最小字节数， 页面Content-Length获取</span><br><span class="line">gzip_min_length 1000;</span><br><span class="line"># 设置压缩文件的类型  （text&#x2F;html)</span><br><span class="line">gzip_types text&#x2F;plain application&#x2F;javascript text&#x2F;css;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-反向代理（分流）"><a href="#2-反向代理（分流）" class="headerlink" title="2.反向代理（分流）"></a>2.反向代理（分流）</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 1.定义上游服务器列表组</span><br><span class="line">upstream web1 &#123;</span><br><span class="line">    server 127.0.0.1:9090 weight&#x3D;1;</span><br><span class="line">    server 127.0.0.1:9091 weight&#x3D;1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2.定义服务 用于转发</span><br><span class="line">server&#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    # using web1 sub domain to access</span><br><span class="line">    server_name 127.0.0.1;&#x2F;&#x2F;服务监听地址</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root &#x2F;home&#x2F;web1_root;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;web1;&#x2F;&#x2F;此处名称与上游服务器列表名称相同</span><br><span class="line">        proxy_read_timeout 300;</span><br><span class="line">        proxy_connect_timeout 300;</span><br><span class="line">        proxy_redirect     off;</span><br><span class="line"></span><br><span class="line">        proxy_set_header   X-Forwarded-Proto $scheme;</span><br><span class="line">        proxy_set_header   Host              $http_host;</span><br><span class="line">        proxy_set_header   X-Real-IP         $remote_addr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 3.配置转发后，监听的服务</span><br><span class="line">server &#123;</span><br><span class="line">    listen       9090;</span><br><span class="line">    server_name  127.0.0.1;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root   html;</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen       9091;</span><br><span class="line">    server_name  127.0.0.1;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root   html;</span><br><span class="line">        index  index2.html index2.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-nginx-vsCode-插件"><a href="#3-nginx-vsCode-插件" class="headerlink" title="3.nginx vsCode 插件"></a>3.nginx vsCode 插件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 插件名称：</span><br><span class="line">nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p>参照：<br><a href="https://blog.csdn.net/physicsdandan/article/details/45667357" target="_blank" rel="noopener">https://blog.csdn.net/physicsdandan/article/details/45667357</a></p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>nginx</tag>
       </tags>
   </entry>
   <entry>
