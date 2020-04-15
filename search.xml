@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JavaScript位操作</title>
+    <url>/2020/04/09/JavaScript%E4%BD%8D%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h2 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h2><h3 id="1-按位非"><a href="#1-按位非" class="headerlink" title="1.按位非(~)"></a>1.按位非(~)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位取反。(数值的反码) eg. ~25 &#x3D;&gt; -26</span><br></pre></td></tr></table></figure>
+<h3 id="2-按位与-amp"><a href="#2-按位与-amp" class="headerlink" title="2.按位与(&amp;)"></a>2.按位与(&amp;)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位取与。</span><br><span class="line"></span><br><span class="line">1 &amp; 1 &#x3D;&gt; 1</span><br><span class="line">1 &amp; 0 &#x3D;&gt; 0</span><br><span class="line">0 &amp; 1 &#x3D;&gt; 0</span><br><span class="line">0 &amp; 0 &#x3D;&gt; 0</span><br></pre></td></tr></table></figure>
+<h3 id="3-按位或"><a href="#3-按位或" class="headerlink" title="3.按位或(|)"></a>3.按位或(|)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位或。</span><br><span class="line"></span><br><span class="line">1 &amp; 1 &#x3D;&gt; 1</span><br><span class="line">1 &amp; 0 &#x3D;&gt; 1</span><br><span class="line">0 &amp; 1 &#x3D;&gt; 1</span><br><span class="line">0 &amp; 0 &#x3D;&gt; 0</span><br></pre></td></tr></table></figure>
+<h3 id="4-按位异或"><a href="#4-按位异或" class="headerlink" title="4.按位异或(^)"></a>4.按位异或(^)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位异或。</span><br><span class="line"></span><br><span class="line">1 &amp; 1 &#x3D;&gt; 0</span><br><span class="line">1 &amp; 0 &#x3D;&gt; 1</span><br><span class="line">0 &amp; 1 &#x3D;&gt; 1</span><br><span class="line">0 &amp; 0 &#x3D;&gt; 0</span><br></pre></td></tr></table></figure>
+<h3 id="5-左移-lt-lt"><a href="#5-左移-lt-lt" class="headerlink" title="5.左移(&lt;&lt;)"></a>5.左移(&lt;&lt;)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位向左移动指定位数。(右侧多出的空位补 0 )</span><br><span class="line"></span><br><span class="line">var oldValue &#x3D; 2;   &#x2F;&#x2F;等于二进制的10</span><br><span class="line">var newValue &#x3D; oldValue &lt;&lt; 5;   &#x2F;&#x2F;等于二进制的1000000，十进制的 64</span><br><span class="line"></span><br><span class="line">注：左移不会影响操作数的符号位。(eg. -2向左移动5位，结果将是 -64，不是 64。)</span><br></pre></td></tr></table></figure>
+<h3 id="6-有符号的右移-gt-gt"><a href="#6-有符号的右移-gt-gt" class="headerlink" title="6.有符号的右移(&gt;&gt;)"></a>6.有符号的右移(&gt;&gt;)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位向右移动指定位数，保留符号位，且 使用符号位 填充左侧空缺位。</span><br><span class="line"></span><br><span class="line">var oldValue &#x3D; 64;  &#x2F;&#x2F;等于二进制的1000000</span><br><span class="line">var newValue &#x3D; oldValue &gt;&gt; 5; &#x2F;&#x2F;等于二进制的10，即 十进制的 2</span><br></pre></td></tr></table></figure>
+<h3 id="7-无符号右移-gt-gt-gt"><a href="#7-无符号右移-gt-gt-gt" class="headerlink" title="7.无符号右移(&gt;&gt;&gt;)"></a>7.无符号右移(&gt;&gt;&gt;)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位向右移动指定位数(所有位，符号位也右移)，不保留符号位，使用 0 填充左侧空缺位。</span><br><span class="line"></span><br><span class="line">eg.</span><br><span class="line">正数右移 与 上 无分别；</span><br><span class="line">负数右移 求 正数的补码，在整体 右移。</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>JavaScript</tag>
+        <tag>位</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Android生成签名证书keystore</title>
     <url>/2020/04/13/Android%E7%94%9F%E6%88%90%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6keystore/</url>
     <content><![CDATA[<h2 id="Android-如何生成-keystore"><a href="#Android-如何生成-keystore" class="headerlink" title="Android-如何生成 keystore"></a>Android-如何生成 keystore</h2><blockquote>
@@ -54,23 +74,15 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript位操作</title>
-    <url>/2020/04/09/JavaScript%E4%BD%8D%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h2 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h2><h3 id="1-按位非"><a href="#1-按位非" class="headerlink" title="1.按位非(~)"></a>1.按位非(~)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位取反。(数值的反码) eg. ~25 &#x3D;&gt; -26</span><br></pre></td></tr></table></figure>
-<h3 id="2-按位与-amp"><a href="#2-按位与-amp" class="headerlink" title="2.按位与(&amp;)"></a>2.按位与(&amp;)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位取与。</span><br><span class="line"></span><br><span class="line">1 &amp; 1 &#x3D;&gt; 1</span><br><span class="line">1 &amp; 0 &#x3D;&gt; 0</span><br><span class="line">0 &amp; 1 &#x3D;&gt; 0</span><br><span class="line">0 &amp; 0 &#x3D;&gt; 0</span><br></pre></td></tr></table></figure>
-<h3 id="3-按位或"><a href="#3-按位或" class="headerlink" title="3.按位或(|)"></a>3.按位或(|)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位或。</span><br><span class="line"></span><br><span class="line">1 &amp; 1 &#x3D;&gt; 1</span><br><span class="line">1 &amp; 0 &#x3D;&gt; 1</span><br><span class="line">0 &amp; 1 &#x3D;&gt; 1</span><br><span class="line">0 &amp; 0 &#x3D;&gt; 0</span><br></pre></td></tr></table></figure>
-<h3 id="4-按位异或"><a href="#4-按位异或" class="headerlink" title="4.按位异或(^)"></a>4.按位异或(^)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位异或。</span><br><span class="line"></span><br><span class="line">1 &amp; 1 &#x3D;&gt; 0</span><br><span class="line">1 &amp; 0 &#x3D;&gt; 1</span><br><span class="line">0 &amp; 1 &#x3D;&gt; 1</span><br><span class="line">0 &amp; 0 &#x3D;&gt; 0</span><br></pre></td></tr></table></figure>
-<h3 id="5-左移-lt-lt"><a href="#5-左移-lt-lt" class="headerlink" title="5.左移(&lt;&lt;)"></a>5.左移(&lt;&lt;)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位向左移动指定位数。(右侧多出的空位补 0 )</span><br><span class="line"></span><br><span class="line">var oldValue &#x3D; 2;   &#x2F;&#x2F;等于二进制的10</span><br><span class="line">var newValue &#x3D; oldValue &lt;&lt; 5;   &#x2F;&#x2F;等于二进制的1000000，十进制的 64</span><br><span class="line"></span><br><span class="line">注：左移不会影响操作数的符号位。(eg. -2向左移动5位，结果将是 -64，不是 64。)</span><br></pre></td></tr></table></figure>
-<h3 id="6-有符号的右移-gt-gt"><a href="#6-有符号的右移-gt-gt" class="headerlink" title="6.有符号的右移(&gt;&gt;)"></a>6.有符号的右移(&gt;&gt;)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位向右移动指定位数，保留符号位，且 使用符号位 填充左侧空缺位。</span><br><span class="line"></span><br><span class="line">var oldValue &#x3D; 64;  &#x2F;&#x2F;等于二进制的1000000</span><br><span class="line">var newValue &#x3D; oldValue &gt;&gt; 5; &#x2F;&#x2F;等于二进制的10，即 十进制的 2</span><br></pre></td></tr></table></figure>
-<h3 id="7-无符号右移-gt-gt-gt"><a href="#7-无符号右移-gt-gt-gt" class="headerlink" title="7.无符号右移(&gt;&gt;&gt;)"></a>7.无符号右移(&gt;&gt;&gt;)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">转成二进制，按位向右移动指定位数(所有位，符号位也右移)，不保留符号位，使用 0 填充左侧空缺位。</span><br><span class="line"></span><br><span class="line">eg.</span><br><span class="line">正数右移 与 上 无分别；</span><br><span class="line">负数右移 求 正数的补码，在整体 右移。</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>技术</category>
-      </categories>
+    <title>About Me</title>
+    <url>/2020/04/08/about/</url>
+    <content><![CDATA[<blockquote>
+<p>A Coder, live in Beijing, China.</p>
+</blockquote>
+<p>姓名：王若宇<br>现居：Beijing<br>QQ: 924971430<br>Email: <a href="mailto:lushichuanshuo183@163.com">lushichuanshuo183@163.com</a></p>
+]]></content>
       <tags>
         <tag>随笔</tag>
-        <tag>JavaScript</tag>
-        <tag>位</tag>
       </tags>
   </entry>
   <entry>
@@ -87,18 +99,6 @@
         <tag>随笔</tag>
         <tag>python</tag>
         <tag>plist文件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>About Me</title>
-    <url>/2020/04/08/about/</url>
-    <content><![CDATA[<blockquote>
-<p>A Coder, live in Beijing, China.</p>
-</blockquote>
-<p>姓名：王若宇<br>现居：Beijing<br>QQ: 924971430<br>Email: <a href="mailto:lushichuanshuo183@163.com">lushichuanshuo183@163.com</a></p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -123,6 +123,20 @@
         <tag>随笔</tag>
         <tag>centos</tag>
         <tag>nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git删除分支</title>
+    <url>/2020/04/09/git%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -a</span><br><span class="line">git push origin --delete ruoyu &#x2F;&#x2F;删除 远程分支</span><br><span class="line">git branch -d ruoyu &#x2F;&#x2F;删除 本地分支</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -195,38 +209,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git删除分支</title>
-    <url>/2020/04/09/git%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -a</span><br><span class="line">git push origin --delete ruoyu &#x2F;&#x2F;删除 远程分支</span><br><span class="line">git branch -d ruoyu &#x2F;&#x2F;删除 本地分支</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/04/08/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>release x8q7 blog</title>
     <url>/2020/04/08/hi/</url>
     <content><![CDATA[<h2 id="I’m-glad-to-tell-the-world-hello-world"><a href="#I’m-glad-to-tell-the-world-hello-world" class="headerlink" title="I’m glad to tell the world, hello world."></a>I’m glad to tell the world, hello world.</h2><blockquote>
@@ -260,50 +242,22 @@
       </tags>
   </entry>
   <entry>
-    <title>【JavaScript高级教程】笔记-JSON篇</title>
-    <url>/2020/04/10/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E3%80%91%E7%AC%94%E8%AE%B0-JSON%E7%AF%87/</url>
-    <content><![CDATA[<h2 id="【JavaScript高级教程】笔记-JSON篇"><a href="#【JavaScript高级教程】笔记-JSON篇" class="headerlink" title="【JavaScript高级教程】笔记-JSON篇"></a>【JavaScript高级教程】笔记-JSON篇</h2><blockquote>
-<p>JavaScript Object Notation, Javascript 对象表示法</p>
-</blockquote>
-<p>注：JSON是一种数据格式，不是一种编程语言。</p>
-<h3 id="1-语法"><a href="#1-语法" class="headerlink" title="1.语法"></a>1.语法</h3><p>JSON的语法可以表示，三种类型的值：</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 简单值：字符串，数值，布尔值，null。不支持 <code>undefined</code>。</li>
-<li><input checked="" disabled="" type="checkbox"> 对象：与JavaScript中对象相近，简单或者复杂键值对形式，但是，key 必须用双引号。</li>
-<li><input checked="" disabled="" type="checkbox"> 数组：与JavaScript中数组相近，值或者对象的有序列表。</li>
-</ul>
-<p>注：JSON不支持变量，函数，对象实例。</p>
-<h4 id="1-简单值的JSON形式"><a href="#1-简单值的JSON形式" class="headerlink" title="1.简单值的JSON形式"></a>1.简单值的JSON形式</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">数值： 5</span><br><span class="line">字符串： &quot;hello world!&quot;</span><br><span class="line">布尔值： 布尔值</span><br><span class="line">null： null</span><br></pre></td></tr></table></figure>
+    <title>Hello World</title>
+    <url>/2020/04/08/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="2-对象的JSON形式"><a href="#2-对象的JSON形式" class="headerlink" title="2.对象的JSON形式"></a>2.对象的JSON形式</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;nike&quot;,</span><br><span class="line">    &quot;age&quot;: 29</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">注：不要写成 单引号。</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-数组的JSON形式"><a href="#3-数组的JSON形式" class="headerlink" title="3.数组的JSON形式"></a>3.数组的JSON形式</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[25, &quot;hi&quot;, true]</span><br><span class="line"></span><br><span class="line">也可以是复杂的数组形式，内部值为数组或者对象。</span><br></pre></td></tr></table></figure>
-<h3 id="2-解析与序列化"><a href="#2-解析与序列化" class="headerlink" title="2.解析与序列化"></a>2.解析与序列化</h3><h4 id="1-序列化"><a href="#1-序列化" class="headerlink" title="1.序列化"></a>1.序列化</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">JSON.stringify(obj[,filter,indentation])</span><br></pre></td></tr></table></figure>
-<h5 id="1-参数"><a href="#1-参数" class="headerlink" title="1.参数"></a>1.参数</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">obj：要序列化的JavaScript对象；</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">filter：可以是数组形式，也可以是函数；</span><br><span class="line"></span><br><span class="line">1.数组形式：JSON.stringify()的结果只包含数组中列出的属性。</span><br><span class="line">eg:</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book, [&quot;title&quot;, &quot;edition&quot;]);</span><br><span class="line"></span><br><span class="line">2.函数形式：函数接收两个参数，key和value。函数返回值就是相应键的值。</span><br><span class="line">注：如果返回undefined，则对应的属性被忽略。</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book, function(key, value)&#123;</span><br><span class="line">    switch(key)&#123;</span><br><span class="line">        case &quot;authors&quot;:</span><br><span class="line">            return value.join(&quot;,&quot;);</span><br><span class="line">        </span><br><span class="line">        case &quot;year&quot;:</span><br><span class="line">            return 5000;</span><br><span class="line">        </span><br><span class="line">        case &quot;eiditon&quot;:</span><br><span class="line">            return undefined;</span><br><span class="line">        </span><br><span class="line">        default:</span><br><span class="line">            return value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">indentation: 控制结果中的缩进和空白符。</span><br><span class="line">注：最大缩进为10，大于10会自动转化为10。</span><br><span class="line"></span><br><span class="line">也可以使用制表符或者任意字符，用来填充。</span><br></pre></td></tr></table></figure>
-<h5 id="2-toJSON方法"><a href="#2-toJSON方法" class="headerlink" title="2.toJSON方法"></a>2.toJSON方法</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011,</span><br><span class="line">    toJSON: function()&#123;</span><br><span class="line">        return this.title</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book); &#x2F;&#x2F;&quot;Professional Javascript&quot;</span><br><span class="line"></span><br><span class="line">相当于复写了内部方法。</span><br></pre></td></tr></table></figure>
-<h5 id="3-序列化顺序"><a href="#3-序列化顺序" class="headerlink" title="3.序列化顺序"></a>3.序列化顺序</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.如果存在toJSON方法且能通过他取得有效值，则调用该方法，否则，返回对象本身；</span><br><span class="line">2.如果提供了参数二，则进行过滤。传入过滤器的值，是第一步返回的值；</span><br><span class="line">3.对第二步返回的值进行序列化；</span><br><span class="line">4.如果提供了参数三，则进行相应格式化；</span><br><span class="line"></span><br><span class="line">注：个人理解像递归函数。</span><br></pre></td></tr></table></figure>
-<h4 id="2-解析"><a href="#2-解析" class="headerlink" title="2.解析"></a>2.解析</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">JSON.stringify(obj[,reviver])</span><br></pre></td></tr></table></figure>
-<h5 id="1-参数-1"><a href="#1-参数-1" class="headerlink" title="1.参数"></a>1.参数</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">obj：要解析的JavaScript对象；</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">reviver: 还原函数；</span><br><span class="line">注：如果还原函数返回undefined，则从结果中删除相应的key；如果返回其他值，则正常解析；</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">eg:</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011,</span><br><span class="line">    releaseDate: new Date(2011, 11, 1)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book);</span><br><span class="line"></span><br><span class="line">var bookCopy &#x3D; JSON.parse(jsonText, function(key, value)&#123;</span><br><span class="line">    if (key &#x3D;&#x3D; &quot;releaseDate&quot;) &#123;</span><br><span class="line">        return new Date(value);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-
-
-
-
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>JavaScript</tag>
-        <tag>JSON</tag>
-      </tags>
   </entry>
   <entry>
     <title>【JavaScript高级教程】笔记-网络与跨域</title>
@@ -393,22 +347,49 @@
       </tags>
   </entry>
   <entry>
-    <title>感悟2020-04-10</title>
-    <url>/2020/04/10/%E6%84%9F%E6%82%9F2020-04-10/</url>
-    <content><![CDATA[<h2 id="流民日记第二天"><a href="#流民日记第二天" class="headerlink" title="流民日记第二天"></a>流民日记第二天</h2><p>&emsp;&emsp;2020年4月10日，天气晴，心情阴。</p>
-<p>&emsp;&emsp;今天是失业的第二天，一天基本上都没有学习，上午看了下同学的问题（其实比较低级的错误，但是，我第一遍看代码并没有察觉），发现js基础的学习，是需要持续不断的复习。</p>
-<p>&emsp;&emsp;就目前而言，js语言及js语言的实践，还有很大一部分是不知道的，所以，接下来要做的，就是尽量去完善自己的知识体系。</p>
-<p>&emsp;&emsp;工作经验算起来，整整两年半，沉淀了多少东西，从自己写博客就感觉到了，其实，没多少。</p>
-<p>&emsp;&emsp;我要每天沉淀知识，每天更新自己的博客，不一定每天写日记，但是我会在重要的时间轴上，记录下来。</p>
-<p>&emsp;&emsp;相信自己，我可以。更强。</p>
+    <title>【JavaScript高级教程】笔记-JSON篇</title>
+    <url>/2020/04/10/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E3%80%91%E7%AC%94%E8%AE%B0-JSON%E7%AF%87/</url>
+    <content><![CDATA[<h2 id="【JavaScript高级教程】笔记-JSON篇"><a href="#【JavaScript高级教程】笔记-JSON篇" class="headerlink" title="【JavaScript高级教程】笔记-JSON篇"></a>【JavaScript高级教程】笔记-JSON篇</h2><blockquote>
+<p>JavaScript Object Notation, Javascript 对象表示法</p>
+</blockquote>
+<p>注：JSON是一种数据格式，不是一种编程语言。</p>
+<h3 id="1-语法"><a href="#1-语法" class="headerlink" title="1.语法"></a>1.语法</h3><p>JSON的语法可以表示，三种类型的值：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 简单值：字符串，数值，布尔值，null。不支持 <code>undefined</code>。</li>
+<li><input checked="" disabled="" type="checkbox"> 对象：与JavaScript中对象相近，简单或者复杂键值对形式，但是，key 必须用双引号。</li>
+<li><input checked="" disabled="" type="checkbox"> 数组：与JavaScript中数组相近，值或者对象的有序列表。</li>
+</ul>
+<p>注：JSON不支持变量，函数，对象实例。</p>
+<h4 id="1-简单值的JSON形式"><a href="#1-简单值的JSON形式" class="headerlink" title="1.简单值的JSON形式"></a>1.简单值的JSON形式</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">数值： 5</span><br><span class="line">字符串： &quot;hello world!&quot;</span><br><span class="line">布尔值： 布尔值</span><br><span class="line">null： null</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-对象的JSON形式"><a href="#2-对象的JSON形式" class="headerlink" title="2.对象的JSON形式"></a>2.对象的JSON形式</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;nike&quot;,</span><br><span class="line">    &quot;age&quot;: 29</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">注：不要写成 单引号。</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-数组的JSON形式"><a href="#3-数组的JSON形式" class="headerlink" title="3.数组的JSON形式"></a>3.数组的JSON形式</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[25, &quot;hi&quot;, true]</span><br><span class="line"></span><br><span class="line">也可以是复杂的数组形式，内部值为数组或者对象。</span><br></pre></td></tr></table></figure>
+<h3 id="2-解析与序列化"><a href="#2-解析与序列化" class="headerlink" title="2.解析与序列化"></a>2.解析与序列化</h3><h4 id="1-序列化"><a href="#1-序列化" class="headerlink" title="1.序列化"></a>1.序列化</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">JSON.stringify(obj[,filter,indentation])</span><br></pre></td></tr></table></figure>
+<h5 id="1-参数"><a href="#1-参数" class="headerlink" title="1.参数"></a>1.参数</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">obj：要序列化的JavaScript对象；</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">filter：可以是数组形式，也可以是函数；</span><br><span class="line"></span><br><span class="line">1.数组形式：JSON.stringify()的结果只包含数组中列出的属性。</span><br><span class="line">eg:</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book, [&quot;title&quot;, &quot;edition&quot;]);</span><br><span class="line"></span><br><span class="line">2.函数形式：函数接收两个参数，key和value。函数返回值就是相应键的值。</span><br><span class="line">注：如果返回undefined，则对应的属性被忽略。</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book, function(key, value)&#123;</span><br><span class="line">    switch(key)&#123;</span><br><span class="line">        case &quot;authors&quot;:</span><br><span class="line">            return value.join(&quot;,&quot;);</span><br><span class="line">        </span><br><span class="line">        case &quot;year&quot;:</span><br><span class="line">            return 5000;</span><br><span class="line">        </span><br><span class="line">        case &quot;eiditon&quot;:</span><br><span class="line">            return undefined;</span><br><span class="line">        </span><br><span class="line">        default:</span><br><span class="line">            return value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">indentation: 控制结果中的缩进和空白符。</span><br><span class="line">注：最大缩进为10，大于10会自动转化为10。</span><br><span class="line"></span><br><span class="line">也可以使用制表符或者任意字符，用来填充。</span><br></pre></td></tr></table></figure>
+<h5 id="2-toJSON方法"><a href="#2-toJSON方法" class="headerlink" title="2.toJSON方法"></a>2.toJSON方法</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011,</span><br><span class="line">    toJSON: function()&#123;</span><br><span class="line">        return this.title</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book); &#x2F;&#x2F;&quot;Professional Javascript&quot;</span><br><span class="line"></span><br><span class="line">相当于复写了内部方法。</span><br></pre></td></tr></table></figure>
+<h5 id="3-序列化顺序"><a href="#3-序列化顺序" class="headerlink" title="3.序列化顺序"></a>3.序列化顺序</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.如果存在toJSON方法且能通过他取得有效值，则调用该方法，否则，返回对象本身；</span><br><span class="line">2.如果提供了参数二，则进行过滤。传入过滤器的值，是第一步返回的值；</span><br><span class="line">3.对第二步返回的值进行序列化；</span><br><span class="line">4.如果提供了参数三，则进行相应格式化；</span><br><span class="line"></span><br><span class="line">注：个人理解像递归函数。</span><br></pre></td></tr></table></figure>
+<h4 id="2-解析"><a href="#2-解析" class="headerlink" title="2.解析"></a>2.解析</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">JSON.stringify(obj[,reviver])</span><br></pre></td></tr></table></figure>
+<h5 id="1-参数-1"><a href="#1-参数-1" class="headerlink" title="1.参数"></a>1.参数</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">obj：要解析的JavaScript对象；</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">reviver: 还原函数；</span><br><span class="line">注：如果还原函数返回undefined，则从结果中删除相应的key；如果返回其他值，则正常解析；</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">eg:</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &quot;title&quot;:&quot;Professional Javascript&quot;,</span><br><span class="line">    &quot;authors&quot;: [</span><br><span class="line">        &quot;Nicholas C. Zakas&quot;</span><br><span class="line">    ],</span><br><span class="line">    edition: 3,</span><br><span class="line">    year: 2011,</span><br><span class="line">    releaseDate: new Date(2011, 11, 1)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var jsonText &#x3D; JSON.stringify(book);</span><br><span class="line"></span><br><span class="line">var bookCopy &#x3D; JSON.parse(jsonText, function(key, value)&#123;</span><br><span class="line">    if (key &#x3D;&#x3D; &quot;releaseDate&quot;) &#123;</span><br><span class="line">        return new Date(value);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 ]]></content>
       <categories>
         <category>随笔</category>
-        <category>感悟</category>
+        <category>技术</category>
       </categories>
       <tags>
         <tag>随笔</tag>
-        <tag>日记</tag>
+        <tag>JavaScript</tag>
+        <tag>JSON</tag>
       </tags>
   </entry>
   <entry>
